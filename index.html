@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FINAN Soluções Financeiras | Informações Institucionais</title>
+  <meta name="description" content="Site institucional da FINAN Soluções Financeiras com informações comerciais, dados cadastrais, transparência operacional, política de privacidade e canais de contato." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg-soft:#111827;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --brand:#0f172a;
+      --accent:#16a34a;
+      --accent-2:#2563eb;
+      --light:#f8fafc;
+      --warning:#fff7ed;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f1f5f9;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:var(--accent-2);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{
+      width:min(1150px, 92%);
+      margin:0 auto;
+    }
+
+    .topbar{
+      background:var(--bg);
+      color:#fff;
+      font-size:14px;
+      padding:10px 0;
+    }
+
+    .topbar .row,
+    nav .row,
+    .hero .row,
+    .cards,
+    .two-col,
+    .footer-grid{
+      display:grid;
+      gap:20px;
+    }
+
+    .topbar .row{
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      align-items:center;
+    }
+
+    nav{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+
+    nav .row{
+      grid-template-columns:180px 1fr;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:var(--brand);
+      letter-spacing:0.5px;
+    }
+
+    .menu{
+      display:flex;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+      gap:18px;
+      font-size:15px;
+    }
+
+    .menu a{
+      color:var(--text);
+      font-weight:600;
+    }
+
+    .hero{
+      background:linear-gradient(135deg,#0f172a 0%, #1e293b 55%, #334155 100%);
+      color:#fff;
+      padding:70px 0 50px;
+    }
+
+    .hero .row{
+      grid-template-columns:1.2fr .8fr;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:44px;
+      line-height:1.15;
+      margin-bottom:18px;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:#e2e8f0;
+      margin-bottom:24px;
+      max-width:760px;
+    }
+
+    .btns{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:10px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:700;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:#16a34a;
+      color:#fff;
+    }
+
+    .btn-secondary{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.3);
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:24px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-card h3{
+      margin-bottom:12px;
+      font-size:20px;
+    }
+
+    .hero-card ul{
+      list-style:none;
+      display:grid;
+      gap:10px;
+      color:#e2e8f0;
+      font-size:15px;
+    }
+
+    section{
+      padding:58px 0;
+    }
+
+    .section-title{
+      font-size:32px;
+      margin-bottom:10px;
+      color:var(--brand);
+    }
+
+    .section-subtitle{
+      color:var(--muted);
+      max-width:850px;
+      margin-bottom:28px;
+    }
+
+    .cards{
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 8px 30px rgba(15,23,42,.05);
+    }
+
+    .card h3{
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .card p, .card li{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .card ul{
+      padding-left:18px;
+    }
+
+    .two-col{
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      align-items:start;
+    }
+
+    .info-list{
+      list-style:none;
+      display:grid;
+      gap:14px;
+    }
+
+    .info-list li{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px 18px;
+    }
+
+    .info-list strong{
+      display:block;
+      color:var(--brand);
+      margin-bottom:4px;
+    }
+
+    .notice{
+      background:var(--warning);
+      border:1px solid #fdba74;
+      border-radius:16px;
+      padding:18px;
+      color:#9a3412;
+      font-size:15px;
+      margin-top:18px;
+    }
+
+    .steps{
+      display:grid;
+      gap:14px;
+    }
+
+    .step{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+    }
+
+    .step-number{
+      min-width:36px;
+      height:36px;
+      border-radius:999px;
+      background:var(--brand);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+    }
+
+    .faq details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px 18px;
+      margin-bottom:12px;
+    }
+
+    .faq summary{
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .faq p{
+      margin-top:10px;
+      color:var(--muted);
+    }
+
+    .contact-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px;
+    }
+
+    .contact-box h3{
+      margin-bottom:12px;
+    }
+
+    footer{
+      background:var(--bg);
+      color:#cbd5e1;
+      padding:40px 0 28px;
+      margin-top:30px;
+    }
+
+    .footer-grid{
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      margin-bottom:22px;
+    }
+
+    footer h4{
+      color:#fff;
+      margin-bottom:10px;
+    }
+
+    footer p, footer li, footer a{
+      color:#cbd5e1;
+      font-size:14px;
+    }
+
+    footer ul{
+      list-style:none;
+      display:grid;
+      gap:8px;
+    }
+
+    .copyright{
+      border-top:1px solid rgba(255,255,255,.1);
+      padding-top:18px;
+      font-size:13px;
+      color:#94a3b8;
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    .highlight{
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    @media (max-width: 850px){
+      h1{font-size:34px}
+      .hero .row{grid-template-columns:1fr}
+      nav .row{grid-template-columns:1fr; gap:12px}
+      .menu{justify-content:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="row">
+        <div><strong>Atendimento institucional:</strong> contato para informações comerciais e cadastrais</div>
+        <div><strong>CNPJ:</strong> 47.407.874/0001-21</div>
+        <div><strong>Situação cadastral:</strong> Ativa</div>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="container">
+      <div class="row">
+        <div class="logo">FINAN</div>
+        <div class="menu">
+          <a href="#empresa">Empresa</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#operacao">Operação Comercial</a>
+          <a href="#privacidade">Privacidade</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="row">
+        <div>
+          <span class="badge">Informações institucionais e comerciais</span>
+          <h1>FINAN Soluções Financeiras</h1>
+          <p>
+            Empresa brasileira com atuação em serviços de apoio comercial e operacional
+            no segmento financeiro, com foco em atendimento, intermediação e suporte
+            relacionado a soluções oferecidas por instituições parceiras, de forma transparente,
+            documentada e com respeito à privacidade dos clientes.
+          </p>
+          <div class="btns">
+            <a class="btn btn-primary" href="#contato">Fale com a empresa</a>
+            <a class="btn btn-secondary" href="#privacidade">Política de Privacidade</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Dados principais</h3>
+          <ul>
+            <li><strong>Razão social:</strong> FINAN SOLUCOES FINANCEIRAS LTDA</li>
+            <li><strong>Nome fantasia:</strong> FINAN Soluções Financeiras</li>
+            <li><strong>CNPJ:</strong> 47.407.874/0001-21</li>
+            <li><strong>Abertura:</strong> 03/08/2022</li>
+            <li><strong>Atividade principal:</strong> Correspondentes de instituições financeiras</li>
+            <li><strong>Endereço:</strong> Av. Brigadeiro Luís Antônio, 2367, Sala 911, Jardim Paulista, São Paulo/SP, CEP 01401-900</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="empresa">
+      <div class="container">
+        <h2 class="section-title">Sobre a empresa</h2>
+        <p class="section-subtitle">
+          Este site apresenta as principais informações institucionais, cadastrais e operacionais
+          da empresa, com o objetivo de reforçar a transparência das atividades, dos canais de contato,
+          da forma de atendimento ao público e dos compromissos com segurança e conformidade.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Identificação empresarial</h3>
+            <p>
+              A FINAN SOLUCOES FINANCEIRAS LTDA é uma pessoa jurídica ativa, inscrita no CNPJ
+              47.407.874/0001-21, com natureza jurídica de Sociedade Empresária Limitada.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Atuação</h3>
+            <p>
+              A atividade principal cadastrada é <strong>Correspondentes de instituições financeiras</strong>,
+              com atuação voltada à intermediação, apoio operacional, atendimento comercial,
+              organização documental e suporte em processos relacionados a serviços financeiros.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Compromisso institucional</h3>
+            <p>
+              A empresa busca manter comunicação clara com clientes atuais e potenciais,
+              apresentando informações comerciais de forma objetiva, sem promessas enganosas,
+              com respeito às regras aplicáveis, aos parceiros envolvidos e à proteção de dados.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="dados" style="background:#f8fafc;">
+      <div class="container">
+        <h2 class="section-title">Dados cadastrais</h2>
+        <p class="section-subtitle">
+          Informações públicas associadas ao cadastro empresarial.
+        </p>
+
+        <div class="two-col">
+          <ul class="info-list">
+            <li>
+              <strong>Razão social</strong>
+              FINAN SOLUCOES FINANCEIRAS LTDA
+            </li>
+            <li>
+              <strong>Nome fantasia</strong>
+              FINAN Soluções Financeiras
+            </li>
+            <li>
+              <strong>CNPJ</strong>
+              47.407.874/0001-21
+            </li>
+            <li>
+              <strong>Data de abertura</strong>
+              03/08/2022
+            </li>
+            <li>
+              <strong>Situação cadastral</strong>
+              Ativa
+            </li>
+            <li>
+              <strong>Porte</strong>
+              Microempresa
+            </li>
+          </ul>
+
+          <ul class="info-list">
+            <li>
+              <strong>Atividade principal</strong>
+              CNAE 6619-3/02 — Correspondentes de instituições financeiras
+            </li>
+            <li>
+              <strong>Atividades secundárias</strong>
+              Atividades de cobrança e informações cadastrais; preparação de documentos e serviços especializados de apoio administrativo.
+            </li>
+            <li>
+              <strong>Endereço</strong>
+              Avenida Brigadeiro Luís Antônio, 2367, Sala 911, Jardim Paulista, São Paulo/SP, CEP 01401-900
+            </li>
+            <li>
+              <strong>Capital social</strong>
+              R$ 200.000,00
+            </li>
+            <li>
+              <strong>Administração</strong>
+              Sócio-administrador constante em base pública.
+            </li>
+          </ul>
+        </div>
+
+        <div class="notice">
+          Importante: antes de publicar, revise telefone, e-mail, política de privacidade e demais
+          dados de contato para garantir que o site reflita exatamente as informações atualmente utilizadas
+          pela sua empresa no atendimento ao público.
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <h2 class="section-title">Serviços e atividades</h2>
+        <p class="section-subtitle">
+          A empresa atua no suporte comercial e operacional de soluções financeiras, podendo realizar,
+          conforme o modelo de negócio e parcerias aplicáveis, as seguintes atividades:
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Atendimento e orientação inicial</h3>
+            <p>
+              Atendimento de interessados para apresentação de informações gerais sobre soluções,
+              requisitos, documentação necessária, fluxo de análise e etapas de contratação.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Recepção e organização documental</h3>
+            <p>
+              Coleta, conferência e organização de dados e documentos fornecidos pelo cliente,
+              para posterior análise interna ou envio a instituições e parceiros autorizados.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Intermediação operacional</h3>
+            <p>
+              Apoio na conexão entre cliente e instituições parceiras, sempre de acordo com os critérios
+              de elegibilidade, políticas internas, análise documental e eventuais exigências regulatórias.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Suporte pós-atendimento</h3>
+            <p>
+              Esclarecimento de dúvidas sobre andamento, pendências documentais, atualização cadastral,
+              canais de suporte e orientações sobre próximas etapas do processo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="operacao" style="background:#f8fafc;">
+      <div class="container">
+        <h2 class="section-title">Como funciona a operação comercial</h2>
+        <p class="section-subtitle">
+          Para fins de transparência institucional, abaixo está um fluxo resumido de atendimento.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <strong>Contato inicial</strong>
+              <p class="muted">
+                O cliente entra em contato por canais oficiais para solicitar informações
+                sobre os serviços divulgados pela empresa.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <strong>Análise preliminar</strong>
+              <p class="muted">
+                São apresentadas informações gerais, critérios básicos e lista de documentos necessários,
+                quando aplicável.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <strong>Envio de documentos e dados</strong>
+              <p class="muted">
+                O interessado fornece as informações solicitadas por canal seguro, para análise cadastral
+                e verificação de compatibilidade com a solução pretendida.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>
+              <strong>Encaminhamento e processamento</strong>
+              <p class="muted">
+                Quando necessário, os dados podem ser encaminhados a parceiros ou instituições habilitadas,
+                observando a finalidade do atendimento e os limites consentidos pelo cliente.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">5</div>
+            <div>
+              <strong>Retorno ao cliente</strong>
+              <p class="muted">
+                O cliente recebe atualização sobre andamento, pendências, aprovação, reprovação
+                ou necessidade de complementação documental.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="transparencia">
+      <div class="container">
+        <h2 class="section-title">Compromissos de transparência</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Informação clara</h3>
+            <p>
+              A empresa busca manter descrições compatíveis com os serviços efetivamente oferecidos,
+              evitando alegações enganosas, promessas absolutas de aprovação ou omissão de condições relevantes.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Relacionamentos comerciais</h3>
+            <p>
+              Sempre que houver participação de parceiros, prestadores ou instituições financeiras,
+              essa atuação ocorre dentro do fluxo operacional do serviço ofertado e conforme a natureza da atividade exercida.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Canal de atendimento</h3>
+            <p>
+              Clientes podem solicitar esclarecimentos, revisão de informações cadastrais,
+              suporte operacional e orientações por meio dos canais oficiais da empresa.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Atualização de conteúdo</h3>
+            <p>
+              Informações comerciais, políticas e contatos podem ser atualizados periodicamente
+              para refletir a operação real da empresa e suas rotinas de atendimento.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacidade" style="background:#f8fafc;">
+      <div class="container">
+        <h2 class="section-title">Privacidade e proteção de dados</h2>
+        <p class="section-subtitle">
+          A empresa adota práticas voltadas à proteção das informações pessoais fornecidas por clientes
+          atuais e potenciais, observando princípios de necessidade, finalidade, acesso restrito e segurança.
+        </p>
+
+        <div class="two-col">
+          <article class="card">
+            <h3>Como os dados podem ser tratados</h3>
+            <ul>
+              <li>Identificação e contato com o cliente interessado.</li>
+              <li>Análise cadastral e validação documental.</li>
+              <li>Atendimento comercial e suporte operacional.</li>
+              <li>Cumprimento de obrigações legais, regulatórias e contratuais.</li>
+              <li>Prevenção a fraudes, inconsistências e uso indevido da plataforma de atendimento.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Medidas de segurança</h3>
+            <ul>
+              <li>Controle de acesso às informações.</li>
+              <li>Uso de canais formais para recebimento de documentos.</li>
+              <li>Armazenamento conforme necessidade operacional e obrigações legais.</li>
+              <li>Restrição de compartilhamento a hipóteses necessárias à execução do serviço.</li>
+              <li>Monitoramento e revisão de procedimentos internos de proteção de dados.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+          <h3>Resumo da Política de Privacidade</h3>
+          <p>
+            Ao entrar em contato com a empresa, o usuário declara ciência de que alguns dados poderão ser solicitados
+            para viabilizar atendimento, análise e retorno sobre os serviços oferecidos. O tratamento desses dados
+            é realizado para finalidades legítimas relacionadas ao atendimento comercial, à execução dos serviços,
+            à prevenção de fraudes e ao cumprimento de obrigações legais. O titular poderá solicitar esclarecimentos
+            pelos canais oficiais informados neste site.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container faq">
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <p class="section-subtitle">
+          Informações úteis para visitantes, clientes e parceiros.
+        </p>
+
+        <details>
+          <summary>A empresa possui identificação empresarial válida?</summary>
+          <p>
+            Sim. A empresa está inscrita no CNPJ 47.407.874/0001-21 e apresenta situação cadastral ativa.
+          </p>
+        </details>
+
+        <details>
+          <summary>Os serviços anunciados são prestados diretamente pela empresa?</summary>
+          <p>
+            A empresa atua em atividades compatíveis com seu objeto cadastral e pode operar diretamente
+            ou com apoio de parceiros necessários ao fluxo comercial e operacional, conforme a natureza
+            do serviço e as exigências aplicáveis.
+          </p>
+        </details>
+
+        <details>
+          <summary>Como o cliente recebe atendimento?</summary>
+          <p>
+            O atendimento ocorre por canais oficiais, com orientação inicial, coleta de informações,
+            análise documental quando necessária e retorno sobre as etapas seguintes do processo.
+          </p>
+        </details>
+
+        <details>
+          <summary>Como os dados pessoais são protegidos?</summary>
+          <p>
+            A empresa adota medidas administrativas e operacionais para restringir acesso indevido,
+            utilizar os dados apenas para finalidades legítimas e manter controles compatíveis com sua operação.
+          </p>
+        </details>
+
+        <details>
+          <summary>O site contém promessas de aprovação garantida?</summary>
+          <p>
+            Não. A empresa não adota linguagem enganosa ou promessa absoluta de resultado. Toda análise depende
+            de critérios internos, documentação, políticas dos parceiros envolvidos e regras aplicáveis.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <h2 class="section-title">Contato e endereço</h2>
+        <p class="section-subtitle">
+          Utilize os canais oficiais para dúvidas cadastrais, atendimento comercial e solicitações relacionadas a dados pessoais.
+        </p>
+
+        <div class="two-col">
+          <div class="contact-box">
+            <h3>Informações de contato</h3>
+            <p><strong>Empresa:</strong> FINAN SOLUCOES FINANCEIRAS LTDA</p>
+            <p><strong>CNPJ:</strong> 47.407.874/0001-21</p>
+            <p><strong>Endereço:</strong> Avenida Brigadeiro Luís Antônio, 2367, Sala 911, Jardim Paulista, São Paulo/SP, CEP 01401-900</p>
+            <p><strong>E-mail:</strong> <a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5500000000000">(00) 00000-0000</a></p>
+            <p><strong>Horário de atendimento:</strong> Segunda a sexta, das 9h às 18h</p>
+          </div>
+
+          <div class="contact-box">
+            <h3>Importante antes de publicar</h3>
+            <p>
+              Para aumentar a credibilidade do site e a consistência com a verificação do Google Ads, substitua:
+            </p>
+            <ul style="padding-left:18px; color:#475569; margin-top:10px;">
+              <li>o e-mail genérico pelo e-mail oficial do domínio da empresa;</li>
+              <li>o telefone pelo número real de atendimento;</li>
+              <li>o domínio final pelo endereço do seu site oficial;</li>
+              <li>eventuais políticas internas pelo texto definitivo aprovado pela empresa.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>FINAN</h4>
+          <p>
+            Site institucional com informações comerciais, cadastrais e de transparência operacional.
+          </p>
+        </div>
+
+        <div>
+          <h4>Links úteis</h4>
+          <ul>
+            <li><a href="#empresa">Sobre a empresa</a></li>
+            <li><a href="#operacao">Operação comercial</a></li>
+            <li><a href="#privacidade">Privacidade</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Conformidade</h4>
+          <p>
+            Este site foi estruturado para apresentar informações claras sobre a empresa,
+            sua identificação, seus serviços e seus compromissos com transparência e proteção de dados.
+          </p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2026 FINAN SOLUCOES FINANCEIRAS LTDA. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
