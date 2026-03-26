@@ -3,362 +3,522 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FINAN Soluções Financeiras | Informações Institucionais</title>
-  <meta name="description" content="Site institucional da FINAN Soluções Financeiras com informações comerciais, dados cadastrais, transparência operacional, política de privacidade e canais de contato." />
-  <meta name="robots" content="index, follow" />
+  <title>REPASUL VEICULOS LTDA | Veículos Seminovos e Usados em Gravataí/RS</title>
+  <meta name="description" content="REPASUL VEICULOS LTDA em Gravataí/RS. Informações institucionais, atendimento comercial, transparência operacional, privacidade e contato." />
+  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0f172a" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="REPASUL VEICULOS LTDA" />
+  <meta property="og:description" content="Atendimento comercial, transparência institucional e informações completas da empresa." />
+  <meta property="og:url" content="https://seudominio.com.br/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b1220;
-      --bg-soft:#111827;
-      --card:#ffffff;
+      --bg:#ffffff;
+      --bg-soft:#f8fafc;
+      --bg-dark:#0b1220;
       --text:#0f172a;
       --muted:#475569;
       --line:#e2e8f0;
-      --brand:#0f172a;
-      --accent:#16a34a;
-      --accent-2:#2563eb;
-      --light:#f8fafc;
-      --warning:#fff7ed;
+      --primary:#0f172a;
+      --accent:#2563eb;
+      --accent-dark:#1d4ed8;
+      --green:#16a34a;
+      --green-dark:#15803d;
+      --card:#ffffff;
+      --warning-bg:#fff7ed;
+      --warning-border:#fdba74;
+      --warning-text:#9a3412;
+      --info-bg:#eff6ff;
+      --info-border:#bfdbfe;
+      --info-text:#1e3a8a;
+      --shadow:0 14px 40px rgba(15,23,42,.10);
+      --shadow-soft:0 8px 24px rgba(15,23,42,.08);
+      --radius:22px;
+      --radius-sm:16px;
+      --max:1200px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:#f1f5f9;
+      font-family:'Inter',sans-serif;
       color:var(--text);
+      background:var(--bg);
       line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
-    a{color:var(--accent-2);text-decoration:none}
-    a:hover{text-decoration:underline}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
 
     .container{
-      width:min(1150px, 92%);
+      width:min(var(--max), calc(100% - 32px));
       margin:0 auto;
     }
 
     .topbar{
-      background:var(--bg);
-      color:#fff;
+      background:var(--bg-dark);
+      color:#dbeafe;
       font-size:14px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .topbar .container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
       padding:10px 0;
+      flex-wrap:wrap;
     }
 
-    .topbar .row,
-    nav .row,
-    .hero .row,
-    .cards,
-    .two-col,
-    .footer-grid{
-      display:grid;
-      gap:20px;
-    }
-
-    .topbar .row{
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    .topbar-group{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
       align-items:center;
     }
 
-    nav{
-      background:#fff;
-      border-bottom:1px solid var(--line);
+    header{
       position:sticky;
       top:0;
       z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
     }
 
-    nav .row{
-      grid-template-columns:180px 1fr;
+    .nav{
+      display:flex;
+      justify-content:space-between;
       align-items:center;
-      padding:18px 0;
+      gap:20px;
+      padding:16px 0;
     }
 
-    .logo{
-      font-size:28px;
-      font-weight:700;
-      color:var(--brand);
-      letter-spacing:0.5px;
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .brand strong{
+      font-size:22px;
+      font-weight:900;
+      letter-spacing:.2px;
+      color:var(--primary);
+    }
+
+    .brand span{
+      font-size:13px;
+      color:var(--muted);
+      font-weight:600;
     }
 
     .menu{
       display:flex;
-      justify-content:flex-end;
+      gap:20px;
       flex-wrap:wrap;
-      gap:18px;
-      font-size:15px;
-    }
-
-    .menu a{
-      color:var(--text);
-      font-weight:600;
-    }
-
-    .hero{
-      background:linear-gradient(135deg,#0f172a 0%, #1e293b 55%, #334155 100%);
-      color:#fff;
-      padding:70px 0 50px;
-    }
-
-    .hero .row{
-      grid-template-columns:1.2fr .8fr;
       align-items:center;
     }
 
-    .badge{
-      display:inline-block;
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.18);
+    .menu a{
+      color:var(--muted);
+      font-weight:600;
+      font-size:15px;
+      transition:.2s ease;
+    }
+
+    .menu a:hover{color:var(--accent)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:800;
+      border:1px solid transparent;
+      transition:.25s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent-dark));
       color:#fff;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .btn-primary:hover{transform:translateY(-1px)}
+
+    .btn-outline{
+      background:#fff;
+      border-color:var(--line);
+      color:var(--primary);
+    }
+
+    .btn-outline:hover{
+      border-color:#cbd5e1;
+      background:#f8fafc;
+    }
+
+    .hero{
+      background:
+        radial-gradient(circle at top right, rgba(37,99,235,.16), transparent 28%),
+        radial-gradient(circle at left bottom, rgba(37,99,235,.08), transparent 25%),
+        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:30px;
+      align-items:center;
+      padding:72px 0;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#dbeafe;
+      color:#1d4ed8;
+      border:1px solid #bfdbfe;
       padding:8px 14px;
       border-radius:999px;
       font-size:13px;
+      font-weight:800;
       margin-bottom:18px;
     }
 
     h1{
-      font-size:44px;
-      line-height:1.15;
+      font-size:clamp(36px,5vw,60px);
+      line-height:1.02;
+      letter-spacing:-1.8px;
       margin-bottom:18px;
+      font-weight:900;
     }
 
-    .hero p{
+    .lead{
       font-size:18px;
-      color:#e2e8f0;
-      margin-bottom:24px;
+      color:var(--muted);
       max-width:760px;
+      margin-bottom:26px;
     }
 
-    .btns{
+    .hero-actions{
       display:flex;
-      flex-wrap:wrap;
       gap:14px;
-      margin-top:10px;
+      flex-wrap:wrap;
+      margin-bottom:26px;
     }
 
-    .btn{
-      display:inline-block;
-      padding:14px 22px;
-      border-radius:12px;
-      font-weight:700;
-      border:1px solid transparent;
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
     }
 
-    .btn-primary{
-      background:#16a34a;
-      color:#fff;
+    .point{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:var(--shadow-soft);
     }
 
-    .btn-secondary{
-      background:transparent;
-      color:#fff;
-      border-color:rgba(255,255,255,.3);
+    .point strong{
+      display:block;
+      font-size:16px;
+      margin-bottom:6px;
+    }
+
+    .point span{
+      color:var(--muted);
+      font-size:14px;
     }
 
     .hero-card{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:18px;
-      padding:24px;
-      backdrop-filter: blur(6px);
+      background:linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow);
     }
 
-    .hero-card h3{
-      margin-bottom:12px;
-      font-size:20px;
+    .hero-card h2{
+      font-size:24px;
+      margin-bottom:18px;
+      line-height:1.15;
     }
 
-    .hero-card ul{
-      list-style:none;
+    .badge-verified{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#ecfdf5;
+      color:#166534;
+      border:1px solid #bbf7d0;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    .info-list{
       display:grid;
-      gap:10px;
-      color:#e2e8f0;
-      font-size:15px;
+      gap:12px;
     }
 
-    section{
-      padding:58px 0;
+    .info-item{
+      display:grid;
+      grid-template-columns:160px 1fr;
+      gap:12px;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
     }
 
-    .section-title{
-      font-size:32px;
-      margin-bottom:10px;
-      color:var(--brand);
-    }
+    .info-item:last-child{border-bottom:none}
 
-    .section-subtitle{
+    .label{
       color:var(--muted);
-      max-width:850px;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .value{
+      font-weight:700;
+      font-size:15px;
+      word-break:break-word;
+    }
+
+    section{padding:72px 0}
+
+    .section-head{
+      max-width:860px;
       margin-bottom:28px;
     }
 
+    .section-head h2{
+      font-size:clamp(30px,4vw,44px);
+      line-height:1.08;
+      margin-bottom:12px;
+      letter-spacing:-1.2px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      font-size:17px;
+    }
+
     .cards{
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
     }
 
     .card{
       background:#fff;
       border:1px solid var(--line);
-      border-radius:18px;
+      border-radius:var(--radius);
       padding:24px;
-      box-shadow:0 8px 30px rgba(15,23,42,.05);
+      box-shadow:var(--shadow-soft);
+      transition:.2s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow);
     }
 
     .card h3{
       font-size:20px;
-      margin-bottom:10px;
+      margin-bottom:12px;
+      line-height:1.15;
     }
 
-    .card p, .card li{
+    .card p,.card li{
       color:var(--muted);
       font-size:15px;
     }
 
     .card ul{
       padding-left:18px;
-    }
-
-    .two-col{
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      align-items:start;
-    }
-
-    .info-list{
-      list-style:none;
-      display:grid;
-      gap:14px;
-    }
-
-    .info-list li{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px 18px;
-    }
-
-    .info-list strong{
-      display:block;
-      color:var(--brand);
-      margin-bottom:4px;
-    }
-
-    .notice{
-      background:var(--warning);
-      border:1px solid #fdba74;
-      border-radius:16px;
-      padding:18px;
-      color:#9a3412;
-      font-size:15px;
-      margin-top:18px;
-    }
-
-    .steps{
-      display:grid;
-      gap:14px;
-    }
-
-    .step{
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:18px;
-    }
-
-    .step-number{
-      min-width:36px;
-      height:36px;
-      border-radius:999px;
-      background:var(--brand);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-    }
-
-    .faq details{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px 18px;
-      margin-bottom:12px;
-    }
-
-    .faq summary{
-      cursor:pointer;
-      font-weight:700;
-    }
-
-    .faq p{
-      margin-top:10px;
-      color:var(--muted);
-    }
-
-    .contact-box{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:24px;
-    }
-
-    .contact-box h3{
-      margin-bottom:12px;
-    }
-
-    footer{
-      background:var(--bg);
-      color:#cbd5e1;
-      padding:40px 0 28px;
-      margin-top:30px;
-    }
-
-    .footer-grid{
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      margin-bottom:22px;
-    }
-
-    footer h4{
-      color:#fff;
-      margin-bottom:10px;
-    }
-
-    footer p, footer li, footer a{
-      color:#cbd5e1;
-      font-size:14px;
-    }
-
-    footer ul{
-      list-style:none;
       display:grid;
       gap:8px;
     }
 
-    .copyright{
-      border-top:1px solid rgba(255,255,255,.1);
-      padding-top:18px;
-      font-size:13px;
-      color:#94a3b8;
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
     }
 
-    .muted{
+    .notice{
+      margin-top:20px;
+      background:var(--info-bg);
+      border:1px solid var(--info-border);
+      color:var(--info-text);
+      border-radius:18px;
+      padding:18px 20px;
+      font-size:15px;
+    }
+
+    .warning{
+      margin-top:20px;
+      background:var(--warning-bg);
+      border:1px solid var(--warning-border);
+      color:var(--warning-text);
+      border-radius:18px;
+      padding:18px 20px;
+      font-size:15px;
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .trust-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      box-shadow:var(--shadow-soft);
+      text-align:center;
+    }
+
+    .trust-item strong{
+      display:block;
+      font-size:22px;
+      margin-bottom:6px;
+    }
+
+    .trust-item span{
       color:var(--muted);
+      font-size:14px;
     }
 
-    .highlight{
-      color:var(--accent);
-      font-weight:700;
+    .cta{
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,.28), transparent 30%),
+        linear-gradient(135deg,#0f172a 0%, #111827 100%);
+      color:#fff;
+      border-radius:30px;
+      padding:36px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:20px;
+      align-items:center;
+      box-shadow:var(--shadow);
     }
 
-    @media (max-width: 850px){
-      h1{font-size:34px}
-      .hero .row{grid-template-columns:1fr}
-      nav .row{grid-template-columns:1fr; gap:12px}
-      .menu{justify-content:flex-start}
+    .cta h2{
+      font-size:clamp(28px,4vw,40px);
+      line-height:1.05;
+    }
+
+    .cta p{
+      color:#cbd5e1;
+      margin-top:8px;
+      max-width:700px;
+    }
+
+    footer{
+      background:var(--bg-soft);
+      border-top:1px solid var(--line);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr .9fr;
+      gap:24px;
+      padding:42px 0 24px;
+    }
+
+    .footer-grid h3{
+      font-size:18px;
+      margin-bottom:10px;
+    }
+
+    .footer-grid p,.footer-grid li{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .footer-grid ul{
+      padding-left:18px;
+      display:grid;
+      gap:8px;
+    }
+
+    .subfooter{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      padding:16px 0 26px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:60;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--green),var(--green-dark));
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      box-shadow:0 14px 30px rgba(22,163,74,.32);
+    }
+
+    @media (max-width: 1024px){
+      .hero-grid,.split,.footer-grid,.cta{
+        grid-template-columns:1fr;
+      }
+      .cards{
+        grid-template-columns:1fr;
+      }
+      .trust-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .hero-points{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 720px){
+      .menu{display:none}
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .info-item{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+      section{padding:56px 0}
+      .hero-grid{padding:48px 0}
+      .trust-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
@@ -366,484 +526,348 @@
 
   <div class="topbar">
     <div class="container">
-      <div class="row">
-        <div><strong>Atendimento institucional:</strong> contato para informações comerciais e cadastrais</div>
-        <div><strong>CNPJ:</strong> 47.407.874/0001-21</div>
-        <div><strong>Situação cadastral:</strong> Ativa</div>
+      <div class="topbar-group">
+        <span>CNPJ: 51.731.732/0001-92</span>
+        <span>Gravataí / RS</span>
+        <span>Atendimento comercial e institucional</span>
+      </div>
+      <div class="topbar-group">
+        <a href="tel:+5551980107050">(51) 98010-7050</a>
+        <a href="mailto:repasulveiculos@outlook.com">repasulveiculos@outlook.com</a>
       </div>
     </div>
   </div>
 
-  <nav>
-    <div class="container">
-      <div class="row">
-        <div class="logo">FINAN</div>
-        <div class="menu">
-          <a href="#empresa">Empresa</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#operacao">Operação Comercial</a>
-          <a href="#privacidade">Privacidade</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contato">Contato</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <strong>REPASUL VEÍCULOS</strong>
+        <span>REPASUL VEICULOS LTDA</span>
+      </a>
 
-  <header class="hero">
-    <div class="container">
-      <div class="row">
-        <div>
-          <span class="badge">Informações institucionais e comerciais</span>
-          <h1>FINAN Soluções Financeiras</h1>
-          <p>
-            Empresa brasileira com atuação em serviços de apoio comercial e operacional
-            no segmento financeiro, com foco em atendimento, intermediação e suporte
-            relacionado a soluções oferecidas por instituições parceiras, de forma transparente,
-            documentada e com respeito à privacidade dos clientes.
-          </p>
-          <div class="btns">
-            <a class="btn btn-primary" href="#contato">Fale com a empresa</a>
-            <a class="btn btn-secondary" href="#privacidade">Política de Privacidade</a>
-          </div>
-        </div>
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="#empresa">Empresa</a>
+        <a href="#operacoes">Operações</a>
+        <a href="#privacidade">Privacidade</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
-        <aside class="hero-card">
-          <h3>Dados principais</h3>
-          <ul>
-            <li><strong>Razão social:</strong> FINAN SOLUCOES FINANCEIRAS LTDA</li>
-            <li><strong>Nome fantasia:</strong> FINAN Soluções Financeiras</li>
-            <li><strong>CNPJ:</strong> 47.407.874/0001-21</li>
-            <li><strong>Abertura:</strong> 03/08/2022</li>
-            <li><strong>Atividade principal:</strong> Correspondentes de instituições financeiras</li>
-            <li><strong>Endereço:</strong> Av. Brigadeiro Luís Antônio, 2367, Sala 911, Jardim Paulista, São Paulo/SP, CEP 01401-900</li>
-          </ul>
-        </aside>
-      </div>
+      <a class="btn btn-primary" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20mais%20informações%20sobre%20os%20veículos." target="_blank" rel="noopener noreferrer">
+        Falar no WhatsApp
+      </a>
     </div>
   </header>
 
-  <main>
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Informações institucionais e operação comercial</span>
+          <h1>Revenda de veículos com apresentação profissional, atendimento claro e operação transparente.</h1>
+          <p class="lead">
+            A REPASUL VEICULOS LTDA atua no segmento de veículos usados e seminovos, com atendimento comercial por canais oficiais, informações empresariais visíveis e comunicação direta com o consumidor.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20atendimento%20comercial." target="_blank" rel="noopener noreferrer">Atendimento via WhatsApp</a>
+            <a class="btn btn-outline" href="#empresa">Ver dados da empresa</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="point">
+              <strong>Identificação empresarial</strong>
+              <span>Razão social, CNPJ, endereço, telefone, e-mail e atendimento oficial.</span>
+            </div>
+            <div class="point">
+              <strong>Operação clara</strong>
+              <span>Fluxo comercial descrito de forma objetiva para clientes e validações comerciais.</span>
+            </div>
+            <div class="point">
+              <strong>Privacidade e confiança</strong>
+              <span>Política de tratamento de dados e transparência nas informações do negócio.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Dados principais da empresa">
+          <div class="badge-verified">Verificado em 25 de março de 2026</div>
+          <h2>Dados empresariais</h2>
+
+          <div class="info-list">
+            <div class="info-item">
+              <div class="label">Razão social</div>
+              <div class="value">REPASUL VEICULOS LTDA</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Nome comercial</div>
+              <div class="value">Repasul Veículos</div>
+            </div>
+            <div class="info-item">
+              <div class="label">CNPJ</div>
+              <div class="value">51.731.732/0001-92</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Atividade principal</div>
+              <div class="value">Comércio a varejo de automóveis, camionetas e utilitários usados</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Endereço</div>
+              <div class="value">Av. Dorival Cândido Luz de Oliveira, 7050, Bom Princípio, Gravataí - RS, 94070-000, Brasil</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Telefone / WhatsApp</div>
+              <div class="value">(51) 98010-7050</div>
+            </div>
+            <div class="info-item">
+              <div class="label">E-mail</div>
+              <div class="value">repasulveiculos@outlook.com</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Horário</div>
+              <div class="value">Segunda a sexta: 8h às 19h • Sábado: 8h às 17h</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <strong>100%</strong>
+            <span>Atendimento por canais oficiais</span>
+          </div>
+          <div class="trust-item">
+            <strong>CNPJ</strong>
+            <span>Identificação empresarial visível</span>
+          </div>
+          <div class="trust-item">
+            <strong>Loja física</strong>
+            <span>Endereço comercial informado</span>
+          </div>
+          <div class="trust-item">
+            <strong>Privacidade</strong>
+            <span>Tratamento de dados descrito</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="empresa">
       <div class="container">
-        <h2 class="section-title">Sobre a empresa</h2>
-        <p class="section-subtitle">
-          Este site apresenta as principais informações institucionais, cadastrais e operacionais
-          da empresa, com o objetivo de reforçar a transparência das atividades, dos canais de contato,
-          da forma de atendimento ao público e dos compromissos com segurança e conformidade.
-        </p>
+        <div class="section-head">
+          <h2>Sobre a empresa</h2>
+          <p>
+            A REPASUL VEICULOS LTDA é uma empresa com atuação no segmento de veículos usados e seminovos, sediada em Gravataí/RS. O site e os canais digitais têm o objetivo de apresentar a empresa, facilitar o contato comercial e apoiar o atendimento ao consumidor.
+          </p>
+        </div>
 
         <div class="cards">
           <article class="card">
-            <h3>Identificação empresarial</h3>
+            <h3>Atuação atual</h3>
             <p>
-              A FINAN SOLUCOES FINANCEIRAS LTDA é uma pessoa jurídica ativa, inscrita no CNPJ
-              47.407.874/0001-21, com natureza jurídica de Sociedade Empresária Limitada.
+              A empresa atua na divulgação, apresentação comercial e atendimento relacionados a veículos, fornecendo informações sobre disponibilidade, características gerais e continuidade da negociação pelos canais oficiais.
             </p>
           </article>
 
           <article class="card">
-            <h3>Atuação</h3>
+            <h3>Atendimento ao consumidor</h3>
             <p>
-              A atividade principal cadastrada é <strong>Correspondentes de instituições financeiras</strong>,
-              com atuação voltada à intermediação, apoio operacional, atendimento comercial,
-              organização documental e suporte em processos relacionados a serviços financeiros.
+              O consumidor pode entrar em contato por WhatsApp, telefone, e-mail e, quando aplicável, atendimento presencial no endereço comercial informado nesta página.
             </p>
           </article>
 
           <article class="card">
-            <h3>Compromisso institucional</h3>
+            <h3>Transparência institucional</h3>
             <p>
-              A empresa busca manter comunicação clara com clientes atuais e potenciais,
-              apresentando informações comerciais de forma objetiva, sem promessas enganosas,
-              com respeito às regras aplicáveis, aos parceiros envolvidos e à proteção de dados.
+              As informações empresariais, operacionais e de privacidade estão reunidas nesta página para reforçar clareza, confiança e consistência da operação comercial.
             </p>
           </article>
+        </div>
+
+        <div class="warning">
+          <strong>Esclarecimento importante:</strong> a empresa atua atualmente no segmento de veículos. Esta página tem finalidade institucional e comercial, voltada à apresentação do negócio, canais de atendimento e funcionamento da operação atual.
         </div>
       </div>
     </section>
 
-    <section id="dados" style="background:#f8fafc;">
+    <section id="operacoes" style="background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
       <div class="container">
-        <h2 class="section-title">Dados cadastrais</h2>
-        <p class="section-subtitle">
-          Informações públicas associadas ao cadastro empresarial.
-        </p>
+        <div class="section-head">
+          <h2>Como funcionam as operações comerciais</h2>
+          <p>
+            Descrição objetiva do fluxo comercial para o consumidor, com foco em clareza sobre atendimento, negociação e disponibilidade.
+          </p>
+        </div>
 
-        <div class="two-col">
-          <ul class="info-list">
-            <li>
-              <strong>Razão social</strong>
-              FINAN SOLUCOES FINANCEIRAS LTDA
-            </li>
-            <li>
-              <strong>Nome fantasia</strong>
-              FINAN Soluções Financeiras
-            </li>
-            <li>
-              <strong>CNPJ</strong>
-              47.407.874/0001-21
-            </li>
-            <li>
-              <strong>Data de abertura</strong>
-              03/08/2022
-            </li>
-            <li>
-              <strong>Situação cadastral</strong>
-              Ativa
-            </li>
-            <li>
-              <strong>Porte</strong>
-              Microempresa
-            </li>
-          </ul>
+        <div class="split">
+          <article class="card">
+            <h3>Fluxo de atendimento</h3>
+            <ul>
+              <li>O cliente encontra um anúncio, página institucional ou entra em contato diretamente com a empresa.</li>
+              <li>A equipe comercial apresenta informações sobre veículos, disponibilidade, características e condições gerais.</li>
+              <li>Quando há interesse, o atendimento segue pelos canais oficiais da empresa.</li>
+              <li>Negociação, análise documental, avaliação e etapas complementares são conduzidas pela equipe comercial.</li>
+            </ul>
+          </article>
 
-          <ul class="info-list">
-            <li>
-              <strong>Atividade principal</strong>
-              CNAE 6619-3/02 — Correspondentes de instituições financeiras
-            </li>
-            <li>
-              <strong>Atividades secundárias</strong>
-              Atividades de cobrança e informações cadastrais; preparação de documentos e serviços especializados de apoio administrativo.
-            </li>
-            <li>
-              <strong>Endereço</strong>
-              Avenida Brigadeiro Luís Antônio, 2367, Sala 911, Jardim Paulista, São Paulo/SP, CEP 01401-900
-            </li>
-            <li>
-              <strong>Capital social</strong>
-              R$ 200.000,00
-            </li>
-            <li>
-              <strong>Administração</strong>
-              Sócio-administrador constante em base pública.
-            </li>
-          </ul>
+          <article class="card">
+            <h3>Como o público recebe o serviço</h3>
+            <ul>
+              <li>O site e os anúncios funcionam como canais de divulgação institucional e comercial.</li>
+              <li>O interessado recebe atendimento por WhatsApp, telefone, e-mail ou presencialmente.</li>
+              <li>As condições finais dependem de disponibilidade do veículo e confirmação comercial direta com a empresa.</li>
+              <li>As informações pessoais fornecidas pelo cliente são usadas para retorno comercial e continuidade do atendimento.</li>
+            </ul>
+          </article>
         </div>
 
         <div class="notice">
-          Importante: antes de publicar, revise telefone, e-mail, política de privacidade e demais
-          dados de contato para garantir que o site reflita exatamente as informações atualmente utilizadas
-          pela sua empresa no atendimento ao público.
+          <strong>Disponibilidade e condições:</strong> preço, disponibilidade, documentação, avaliação de veículo usado, entrada e demais condições devem ser confirmados diretamente com a equipe da REPASUL VEICULOS LTDA no momento do atendimento.
+        </div>
+
+        <div class="warning">
+          <strong>Financiamento e crédito:</strong> quando houver opção de financiamento, a REPASUL VEICULOS LTDA não atua como instituição financeira e não concede crédito próprio. Eventuais propostas, quando disponíveis, são analisadas e operacionalizadas por instituições financeiras parceiras, sujeitas às políticas e critérios dessas instituições.
         </div>
       </div>
     </section>
 
-    <section id="servicos">
+    <section id="atendimento">
       <div class="container">
-        <h2 class="section-title">Serviços e atividades</h2>
-        <p class="section-subtitle">
-          A empresa atua no suporte comercial e operacional de soluções financeiras, podendo realizar,
-          conforme o modelo de negócio e parcerias aplicáveis, as seguintes atividades:
-        </p>
+        <div class="section-head">
+          <h2>Canais oficiais de atendimento</h2>
+          <p>
+            Atendimento comercial e institucional por canais diretos, com informações de contato visíveis e consistentes.
+          </p>
+        </div>
 
         <div class="cards">
           <article class="card">
-            <h3>Atendimento e orientação inicial</h3>
-            <p>
-              Atendimento de interessados para apresentação de informações gerais sobre soluções,
-              requisitos, documentação necessária, fluxo de análise e etapas de contratação.
+            <h3>WhatsApp</h3>
+            <p>Canal ágil para atendimento comercial, dúvidas, disponibilidade e continuidade da negociação.</p>
+            <p style="margin-top:14px;">
+              <a class="btn btn-primary" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20mais%20informações." target="_blank" rel="noopener noreferrer">Iniciar conversa</a>
             </p>
           </article>
 
           <article class="card">
-            <h3>Recepção e organização documental</h3>
-            <p>
-              Coleta, conferência e organização de dados e documentos fornecidos pelo cliente,
-              para posterior análise interna ou envio a instituições e parceiros autorizados.
-            </p>
+            <h3>Telefone</h3>
+            <p>Contato direto com a empresa para atendimento comercial.</p>
+            <p style="margin-top:14px;font-weight:800;">(51) 98010-7050</p>
           </article>
 
           <article class="card">
-            <h3>Intermediação operacional</h3>
-            <p>
-              Apoio na conexão entre cliente e instituições parceiras, sempre de acordo com os critérios
-              de elegibilidade, políticas internas, análise documental e eventuais exigências regulatórias.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Suporte pós-atendimento</h3>
-            <p>
-              Esclarecimento de dúvidas sobre andamento, pendências documentais, atualização cadastral,
-              canais de suporte e orientações sobre próximas etapas do processo.
-            </p>
+            <h3>E-mail</h3>
+            <p>Canal para contato institucional e continuidade do atendimento comercial.</p>
+            <p style="margin-top:14px;font-weight:800;word-break:break-word;">repasulveiculos@outlook.com</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="operacao" style="background:#f8fafc;">
+    <section id="privacidade" style="background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
       <div class="container">
-        <h2 class="section-title">Como funciona a operação comercial</h2>
-        <p class="section-subtitle">
-          Para fins de transparência institucional, abaixo está um fluxo resumido de atendimento.
-        </p>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div>
-              <strong>Contato inicial</strong>
-              <p class="muted">
-                O cliente entra em contato por canais oficiais para solicitar informações
-                sobre os serviços divulgados pela empresa.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">2</div>
-            <div>
-              <strong>Análise preliminar</strong>
-              <p class="muted">
-                São apresentadas informações gerais, critérios básicos e lista de documentos necessários,
-                quando aplicável.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">3</div>
-            <div>
-              <strong>Envio de documentos e dados</strong>
-              <p class="muted">
-                O interessado fornece as informações solicitadas por canal seguro, para análise cadastral
-                e verificação de compatibilidade com a solução pretendida.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">4</div>
-            <div>
-              <strong>Encaminhamento e processamento</strong>
-              <p class="muted">
-                Quando necessário, os dados podem ser encaminhados a parceiros ou instituições habilitadas,
-                observando a finalidade do atendimento e os limites consentidos pelo cliente.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">5</div>
-            <div>
-              <strong>Retorno ao cliente</strong>
-              <p class="muted">
-                O cliente recebe atualização sobre andamento, pendências, aprovação, reprovação
-                ou necessidade de complementação documental.
-              </p>
-            </div>
-          </div>
+        <div class="section-head">
+          <h2>Política de privacidade e proteção de dados</h2>
+          <p>
+            A empresa valoriza a privacidade de clientes e interessados. Esta seção resume como os dados podem ser tratados no contexto do atendimento comercial.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <section id="transparencia">
-      <div class="container">
-        <h2 class="section-title">Compromissos de transparência</h2>
-        <div class="cards">
+        <div class="split">
           <article class="card">
-            <h3>Informação clara</h3>
-            <p>
-              A empresa busca manter descrições compatíveis com os serviços efetivamente oferecidos,
-              evitando alegações enganosas, promessas absolutas de aprovação ou omissão de condições relevantes.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Relacionamentos comerciais</h3>
-            <p>
-              Sempre que houver participação de parceiros, prestadores ou instituições financeiras,
-              essa atuação ocorre dentro do fluxo operacional do serviço ofertado e conforme a natureza da atividade exercida.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Canal de atendimento</h3>
-            <p>
-              Clientes podem solicitar esclarecimentos, revisão de informações cadastrais,
-              suporte operacional e orientações por meio dos canais oficiais da empresa.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Atualização de conteúdo</h3>
-            <p>
-              Informações comerciais, políticas e contatos podem ser atualizados periodicamente
-              para refletir a operação real da empresa e suas rotinas de atendimento.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="privacidade" style="background:#f8fafc;">
-      <div class="container">
-        <h2 class="section-title">Privacidade e proteção de dados</h2>
-        <p class="section-subtitle">
-          A empresa adota práticas voltadas à proteção das informações pessoais fornecidas por clientes
-          atuais e potenciais, observando princípios de necessidade, finalidade, acesso restrito e segurança.
-        </p>
-
-        <div class="two-col">
-          <article class="card">
-            <h3>Como os dados podem ser tratados</h3>
+            <h3>Quais dados podem ser coletados</h3>
             <ul>
-              <li>Identificação e contato com o cliente interessado.</li>
-              <li>Análise cadastral e validação documental.</li>
-              <li>Atendimento comercial e suporte operacional.</li>
-              <li>Cumprimento de obrigações legais, regulatórias e contratuais.</li>
-              <li>Prevenção a fraudes, inconsistências e uso indevido da plataforma de atendimento.</li>
+              <li>Nome e dados de contato informados pelo usuário.</li>
+              <li>Informações enviadas por formulários, e-mail ou WhatsApp.</li>
+              <li>Dados necessários para responder solicitações e continuar o atendimento.</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Medidas de segurança</h3>
+            <h3>Como os dados são usados</h3>
             <ul>
-              <li>Controle de acesso às informações.</li>
-              <li>Uso de canais formais para recebimento de documentos.</li>
-              <li>Armazenamento conforme necessidade operacional e obrigações legais.</li>
-              <li>Restrição de compartilhamento a hipóteses necessárias à execução do serviço.</li>
-              <li>Monitoramento e revisão de procedimentos internos de proteção de dados.</li>
+              <li>Responder dúvidas e solicitações.</li>
+              <li>Enviar informações ligadas ao interesse demonstrado.</li>
+              <li>Dar continuidade ao atendimento comercial.</li>
+              <li>Cumprir obrigações legais e operacionais, quando aplicável.</li>
             </ul>
           </article>
         </div>
 
-        <div class="card" style="margin-top:20px;">
-          <h3>Resumo da Política de Privacidade</h3>
-          <p>
-            Ao entrar em contato com a empresa, o usuário declara ciência de que alguns dados poderão ser solicitados
-            para viabilizar atendimento, análise e retorno sobre os serviços oferecidos. O tratamento desses dados
-            é realizado para finalidades legítimas relacionadas ao atendimento comercial, à execução dos serviços,
-            à prevenção de fraudes e ao cumprimento de obrigações legais. O titular poderá solicitar esclarecimentos
-            pelos canais oficiais informados neste site.
-          </p>
+        <div class="split" style="margin-top:22px;">
+          <article class="card">
+            <h3>Compartilhamento e segurança</h3>
+            <p>
+              As informações recebidas são tratadas de forma compatível com a finalidade do atendimento, com medidas administrativas e técnicas razoáveis para proteção dos dados.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Direitos do titular</h3>
+            <p>
+              O titular pode solicitar informações, atualização ou esclarecimentos sobre seus dados por meio do e-mail oficial informado nesta página.
+            </p>
+          </article>
         </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container faq">
-        <h2 class="section-title">Perguntas frequentes</h2>
-        <p class="section-subtitle">
-          Informações úteis para visitantes, clientes e parceiros.
-        </p>
-
-        <details>
-          <summary>A empresa possui identificação empresarial válida?</summary>
-          <p>
-            Sim. A empresa está inscrita no CNPJ 47.407.874/0001-21 e apresenta situação cadastral ativa.
-          </p>
-        </details>
-
-        <details>
-          <summary>Os serviços anunciados são prestados diretamente pela empresa?</summary>
-          <p>
-            A empresa atua em atividades compatíveis com seu objeto cadastral e pode operar diretamente
-            ou com apoio de parceiros necessários ao fluxo comercial e operacional, conforme a natureza
-            do serviço e as exigências aplicáveis.
-          </p>
-        </details>
-
-        <details>
-          <summary>Como o cliente recebe atendimento?</summary>
-          <p>
-            O atendimento ocorre por canais oficiais, com orientação inicial, coleta de informações,
-            análise documental quando necessária e retorno sobre as etapas seguintes do processo.
-          </p>
-        </details>
-
-        <details>
-          <summary>Como os dados pessoais são protegidos?</summary>
-          <p>
-            A empresa adota medidas administrativas e operacionais para restringir acesso indevido,
-            utilizar os dados apenas para finalidades legítimas e manter controles compatíveis com sua operação.
-          </p>
-        </details>
-
-        <details>
-          <summary>O site contém promessas de aprovação garantida?</summary>
-          <p>
-            Não. A empresa não adota linguagem enganosa ou promessa absoluta de resultado. Toda análise depende
-            de critérios internos, documentação, políticas dos parceiros envolvidos e regras aplicáveis.
-          </p>
-        </details>
       </div>
     </section>
 
     <section id="contato">
       <div class="container">
-        <h2 class="section-title">Contato e endereço</h2>
-        <p class="section-subtitle">
-          Utilize os canais oficiais para dúvidas cadastrais, atendimento comercial e solicitações relacionadas a dados pessoais.
-        </p>
-
-        <div class="two-col">
-          <div class="contact-box">
-            <h3>Informações de contato</h3>
-            <p><strong>Empresa:</strong> FINAN SOLUCOES FINANCEIRAS LTDA</p>
-            <p><strong>CNPJ:</strong> 47.407.874/0001-21</p>
-            <p><strong>Endereço:</strong> Avenida Brigadeiro Luís Antônio, 2367, Sala 911, Jardim Paulista, São Paulo/SP, CEP 01401-900</p>
-            <p><strong>E-mail:</strong> <a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a></p>
-            <p><strong>Telefone:</strong> <a href="tel:+5500000000000">(00) 00000-0000</a></p>
-            <p><strong>Horário de atendimento:</strong> Segunda a sexta, das 9h às 18h</p>
+        <div class="cta">
+          <div>
+            <h2>Fale com a REPASUL VEÍCULOS</h2>
+            <p>Entre em contato para solicitar atendimento, consultar disponibilidade e receber informações comerciais pelos canais oficiais da empresa.</p>
           </div>
-
-          <div class="contact-box">
-            <h3>Importante antes de publicar</h3>
-            <p>
-              Para aumentar a credibilidade do site e a consistência com a verificação do Google Ads, substitua:
-            </p>
-            <ul style="padding-left:18px; color:#475569; margin-top:10px;">
-              <li>o e-mail genérico pelo e-mail oficial do domínio da empresa;</li>
-              <li>o telefone pelo número real de atendimento;</li>
-              <li>o domínio final pelo endereço do seu site oficial;</li>
-              <li>eventuais políticas internas pelo texto definitivo aprovado pela empresa.</li>
-            </ul>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20atendimento%20da%20Repasul%20Veículos." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-outline" style="background:#fff;" href="mailto:repasulveiculos@outlook.com">Enviar e-mail</a>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>FINAN</h4>
-          <p>
-            Site institucional com informações comerciais, cadastrais e de transparência operacional.
-          </p>
-        </div>
-
-        <div>
-          <h4>Links úteis</h4>
-          <ul>
-            <li><a href="#empresa">Sobre a empresa</a></li>
-            <li><a href="#operacao">Operação comercial</a></li>
-            <li><a href="#privacidade">Privacidade</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Conformidade</h4>
-          <p>
-            Este site foi estruturado para apresentar informações claras sobre a empresa,
-            sua identificação, seus serviços e seus compromissos com transparência e proteção de dados.
-          </p>
-        </div>
+    <div class="container footer-grid">
+      <div>
+        <h3>REPASUL VEÍCULOS</h3>
+        <p>REPASUL VEICULOS LTDA</p>
+        <p>CNPJ: 51.731.732/0001-92</p>
+        <p>Av. Dorival Cândido Luz de Oliveira, 7050, Bom Princípio, Gravataí - RS, 94070-000, Brasil</p>
       </div>
 
-      <div class="copyright">
-        © 2026 FINAN SOLUCOES FINANCEIRAS LTDA. Todos os direitos reservados.
+      <div>
+        <h3>Contato</h3>
+        <ul>
+          <li>Telefone / WhatsApp: (51) 98010-7050</li>
+          <li>E-mail: repasulveiculos@outlook.com</li>
+          <li>Segunda a sexta: 8h às 19h</li>
+          <li>Sábado: 8h às 17h</li>
+        </ul>
       </div>
+
+      <div>
+        <h3>Informações institucionais</h3>
+        <ul>
+          <li>Segmento atual: veículos usados e seminovos</li>
+          <li>Atividade principal: comércio varejista de veículos usados</li>
+          <li>Política de privacidade nesta página</li>
+          <li>Operação comercial descrita de forma transparente</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container subfooter">
+      <span>© 2026 REPASUL VEICULOS LTDA. Todos os direitos reservados.</span>
+      <span>Site institucional com foco em transparência comercial.</span>
     </div>
   </footer>
 
+  <a class="whatsapp-float" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20atendimento." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    ⟲
+  </a>
 </body>
 </html>
