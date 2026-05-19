@@ -1,873 +1,843 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html class="ltr" dir="ltr" lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>REPASUL VEICULOS LTDA | Veículos Seminovos e Usados em Gravataí/RS</title>
-  <meta name="description" content="REPASUL VEICULOS LTDA em Gravataí/RS. Informações institucionais, atendimento comercial, transparência operacional, privacidade e contato." />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0f172a" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="REPASUL VEICULOS LTDA" />
-  <meta property="og:description" content="Atendimento comercial, transparência institucional e informações completas da empresa." />
-  <meta property="og:url" content="https://seudominio.com.br/" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#ffffff;
-      --bg-soft:#f8fafc;
-      --bg-dark:#0b1220;
-      --text:#0f172a;
-      --muted:#475569;
-      --line:#e2e8f0;
-      --primary:#0f172a;
-      --accent:#2563eb;
-      --accent-dark:#1d4ed8;
-      --green:#16a34a;
-      --green-dark:#15803d;
-      --card:#ffffff;
-      --warning-bg:#fff7ed;
-      --warning-border:#fdba74;
-      --warning-text:#9a3412;
-      --info-bg:#eff6ff;
-      --info-border:#bfdbfe;
-      --info-text:#1e3a8a;
-      --shadow:0 14px 40px rgba(15,23,42,.10);
-      --shadow-soft:0 8px 24px rgba(15,23,42,.08);
-      --radius:22px;
-      --radius-sm:16px;
-      --max:1200px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:'Inter',sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-
-    .container{
-      width:min(var(--max), calc(100% - 32px));
-      margin:0 auto;
-    }
-
-    .topbar{
-      background:var(--bg-dark);
-      color:#dbeafe;
-      font-size:14px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .topbar .container{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      padding:10px 0;
-      flex-wrap:wrap;
-    }
-
-    .topbar-group{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
-    }
-
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      padding:16px 0;
-    }
-
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-    }
-
-    .brand strong{
-      font-size:22px;
-      font-weight:900;
-      letter-spacing:.2px;
-      color:var(--primary);
-    }
-
-    .brand span{
-      font-size:13px;
-      color:var(--muted);
-      font-weight:600;
-    }
-
-    .menu{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .menu a{
-      color:var(--muted);
-      font-weight:600;
-      font-size:15px;
-      transition:.2s ease;
-    }
-
-    .menu a:hover{color:var(--accent)}
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:14px 22px;
-      border-radius:999px;
-      font-weight:800;
-      border:1px solid transparent;
-      transition:.25s ease;
-      cursor:pointer;
-      white-space:nowrap;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg,var(--accent),var(--accent-dark));
-      color:#fff;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .btn-primary:hover{transform:translateY(-1px)}
-
-    .btn-outline{
-      background:#fff;
-      border-color:var(--line);
-      color:var(--primary);
-    }
-
-    .btn-outline:hover{
-      border-color:#cbd5e1;
-      background:#f8fafc;
-    }
-
-    .hero{
-      background:
-        radial-gradient(circle at top right, rgba(37,99,235,.16), transparent 28%),
-        radial-gradient(circle at left bottom, rgba(37,99,235,.08), transparent 25%),
-        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
-      border-bottom:1px solid var(--line);
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:30px;
-      align-items:center;
-      padding:72px 0;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:#dbeafe;
-      color:#1d4ed8;
-      border:1px solid #bfdbfe;
-      padding:8px 14px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:800;
-      margin-bottom:18px;
-    }
-
-    h1{
-      font-size:clamp(36px,5vw,60px);
-      line-height:1.02;
-      letter-spacing:-1.8px;
-      margin-bottom:18px;
-      font-weight:900;
-    }
-
-    .lead{
-      font-size:18px;
-      color:var(--muted);
-      max-width:760px;
-      margin-bottom:26px;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom:26px;
-    }
-
-    .hero-points{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-
-    .point{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .point strong{
-      display:block;
-      font-size:16px;
-      margin-bottom:6px;
-    }
-
-    .point span{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .hero-card{
-      background:linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:26px;
-      box-shadow:var(--shadow);
-    }
-
-    .hero-card h2{
-      font-size:24px;
-      margin-bottom:18px;
-      line-height:1.15;
-    }
-
-    .badge-verified{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:#ecfdf5;
-      color:#166534;
-      border:1px solid #bbf7d0;
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:800;
-      margin-bottom:18px;
-    }
-
-    .info-list{
-      display:grid;
-      gap:12px;
-    }
-
-    .info-item{
-      display:grid;
-      grid-template-columns:160px 1fr;
-      gap:12px;
-      padding:12px 0;
-      border-bottom:1px solid var(--line);
-    }
-
-    .info-item:last-child{border-bottom:none}
-
-    .label{
-      color:var(--muted);
-      font-weight:700;
-      font-size:14px;
-    }
-
-    .value{
-      font-weight:700;
-      font-size:15px;
-      word-break:break-word;
-    }
-
-    section{padding:72px 0}
-
-    .section-head{
-      max-width:860px;
-      margin-bottom:28px;
-    }
-
-    .section-head h2{
-      font-size:clamp(30px,4vw,44px);
-      line-height:1.08;
-      margin-bottom:12px;
-      letter-spacing:-1.2px;
-    }
-
-    .section-head p{
-      color:var(--muted);
-      font-size:17px;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow:var(--shadow-soft);
-      transition:.2s ease;
-    }
-
-    .card:hover{
-      transform:translateY(-2px);
-      box-shadow:var(--shadow);
-    }
-
-    .card h3{
-      font-size:20px;
-      margin-bottom:12px;
-      line-height:1.15;
-    }
-
-    .card p,.card li{
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .card ul{
-      padding-left:18px;
-      display:grid;
-      gap:8px;
-    }
-
-    .split{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
-    }
-
-    .notice{
-      margin-top:20px;
-      background:var(--info-bg);
-      border:1px solid var(--info-border);
-      color:var(--info-text);
-      border-radius:18px;
-      padding:18px 20px;
-      font-size:15px;
-    }
-
-    .warning{
-      margin-top:20px;
-      background:var(--warning-bg);
-      border:1px solid var(--warning-border);
-      color:var(--warning-text);
-      border-radius:18px;
-      padding:18px 20px;
-      font-size:15px;
-    }
-
-    .trust-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:16px;
-    }
-
-    .trust-item{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:20px;
-      box-shadow:var(--shadow-soft);
-      text-align:center;
-    }
-
-    .trust-item strong{
-      display:block;
-      font-size:22px;
-      margin-bottom:6px;
-    }
-
-    .trust-item span{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .cta{
-      background:
-        radial-gradient(circle at top right, rgba(59,130,246,.28), transparent 30%),
-        linear-gradient(135deg,#0f172a 0%, #111827 100%);
-      color:#fff;
-      border-radius:30px;
-      padding:36px;
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:20px;
-      align-items:center;
-      box-shadow:var(--shadow);
-    }
-
-    .cta h2{
-      font-size:clamp(28px,4vw,40px);
-      line-height:1.05;
-    }
-
-    .cta p{
-      color:#cbd5e1;
-      margin-top:8px;
-      max-width:700px;
-    }
-
-    footer{
-      background:var(--bg-soft);
-      border-top:1px solid var(--line);
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr .9fr;
-      gap:24px;
-      padding:42px 0 24px;
-    }
-
-    .footer-grid h3{
-      font-size:18px;
-      margin-bottom:10px;
-    }
-
-    .footer-grid p,.footer-grid li{
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .footer-grid ul{
-      padding-left:18px;
-      display:grid;
-      gap:8px;
-    }
-
-    .subfooter{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      padding:16px 0 26px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .whatsapp-float{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      z-index:60;
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      background:linear-gradient(135deg,var(--green),var(--green-dark));
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:28px;
-      box-shadow:0 14px 30px rgba(22,163,74,.32);
-    }
-
-    @media (max-width: 1024px){
-      .hero-grid,.split,.footer-grid,.cta{
-        grid-template-columns:1fr;
-      }
-      .cards{
-        grid-template-columns:1fr;
-      }
-      .trust-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-      .hero-points{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width: 720px){
-      .menu{display:none}
-      .container{width:min(var(--max), calc(100% - 20px))}
-      .info-item{
-        grid-template-columns:1fr;
-        gap:6px;
-      }
-      section{padding:56px 0}
-      .hero-grid{padding:48px 0}
-      .trust-grid{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="Portal de Atendimento - Emita sua 2ª via de boleto, renegocie ou quite suas dívidas de forma rápida e segura.">
+    <title>Portal de Atendimento | Soluções Financeiras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #F8FAFF 0%, #F0F2F8 100%);
+            color: #1A1F36;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --color-primary: #1E3A8A;
+            --color-primary-dark: #152E6E;
+            --color-primary-high: #0F244F;
+            --color-primary-light: #E0E7FF;
+            --color-primary-low: #F0F4FF;
+            --color-secondary: #3B82F6;
+            --color-content-low: #6B7280;
+            --border-radius-lg: 2rem;
+            --border-radius-xl: 3rem;
+            --box-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition-default: all 0.3s ease;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* UTILITY CLASSES */
+        .d-flex { display: flex; }
+        .flex-column { flex-direction: column; }
+        .align-items-center { align-items: center; }
+        .justify-content-center { justify-content: center; }
+        .justify-content-between { justify-content: space-between; }
+        .text-center { text-align: center; }
+        
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* GRID SYSTEM */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+        
+        /* HEADER */
+        .header { 
+            background: rgba(255, 255, 255, 0.98); 
+            backdrop-filter: blur(10px);
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: var(--box-shadow-sm);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1.2rem 0;
+        }
+        
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .logo-icon {
+            width: 3.2rem;
+            height: 3.2rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            border-radius: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        
+        .menu-btn {
+            width: 4rem;
+            height: 4rem;
+            background: var(--color-primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-default);
+            font-size: 2rem;
+        }
+        
+        .menu-btn:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        /* MAIN CONTENT */
+        main {
+            margin-top: 8rem;
+        }
+        
+        /* BANNER */
+        .banner {
+            background: linear-gradient(135deg, var(--color-primary-high) 0%, var(--color-primary) 100%);
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+        
+        .banner-content {
+            padding: 5rem;
+            color: white;
+        }
+        
+        .banner-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        
+        .banner-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .banner-highlight {
+            color: var(--color-secondary);
+        }
+        
+        .banner-line {
+            width: 7rem;
+            height: 0.4rem;
+            background: var(--color-secondary);
+            border: none;
+            margin: 2rem 0;
+        }
+        
+        .banner-subtitle {
+            font-size: 1.8rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* SECTION STYLES */
+        .section {
+            margin-top: 5rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 3.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            color: var(--color-content-low);
+            font-size: 1.6rem;
+        }
+        
+        /* SERVICES CARDS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 3rem 2rem;
+            transition: var(--transition-default);
+            border: 1px solid rgba(30,58,138,0.1);
+            box-shadow: var(--box-shadow-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-xl);
+        }
+        
+        .card-icon {
+            width: 8rem;
+            height: 8rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 3.5rem;
+        }
+        
+        .card-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-primary-dark);
+        }
+        
+        .card-description {
+            font-size: 1.4rem;
+            color: var(--color-content-low);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+        
+        .card-btn {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 1.2rem 2rem;
+            border-radius: 5rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+            display: inline-block;
+            transition: var(--transition-default);
+            width: 100%;
+            max-width: 200px;
+            text-align: center;
+        }
+        
+        .card-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow-md);
+            filter: brightness(1.05);
+        }
+        
+        /* FEATURES GRID */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem 2rem;
+            transition: var(--transition-default);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-md);
+        }
+        
+        .feature-icon {
+            width: 7rem;
+            height: 7rem;
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, #E9EEFD 100%);
+            border-radius: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.8rem;
+            font-size: 3rem;
+        }
+        
+        .feature-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+        
+        .feature-description {
+            font-size: 1.4rem;
+            color: var(--color-content-low);
+            line-height: 1.5;
+        }
+        
+        /* INSTITUCIONAL */
+        .institutional {
+            background: var(--color-primary-low);
+            border-radius: var(--border-radius-xl);
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        .institutional-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .institutional-text {
+            font-size: 1.6rem;
+            line-height: 1.6;
+            color: var(--color-content-low);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 2.4rem;
+            max-width: 500px;
+            width: 90%;
+            padding: 3rem;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+        
+        .modal-icon {
+            font-size: 5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1E3A8A;
+        }
+        
+        .modal-subtitle {
+            text-align: center;
+            color: #6B7280;
+            margin-bottom: 2.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .modal-btn {
+            padding: 1.4rem;
+            border-radius: 5rem;
+            font-weight: 600;
+            font-size: 1.6rem;
+            text-align: center;
+            transition: all 0.2s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .modal-btn-primary {
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            color: white;
+        }
+        
+        .modal-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25D366;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow-lg);
+            transition: var(--transition-default);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            font-size: 3.2rem;
+            color: white;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background-color: #128C7E;
+            animation: none;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: linear-gradient(135deg, #0F244F 0%, #152E6E 100%);
+            color: white;
+            padding: 5rem 0 3rem;
+            margin-top: 6rem;
+            border-radius: 3rem 3rem 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-text {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.75);
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(3px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            font-size: 2rem;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        /* BREADCRUMB */
+        .breadcrumb {
+            margin-bottom: 2rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--color-primary);
+        }
+        
+        .breadcrumb span {
+            color: var(--color-content-low);
+            margin: 0 1rem;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .banner {
+                grid-template-columns: 1fr;
+            }
+            
+            .banner-content {
+                padding: 3rem;
+            }
+            
+            .banner-title {
+                font-size: 3rem;
+            }
+            
+            .services-grid,
+            .features-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.4rem;
+            }
+            
+            .whatsapp-float {
+                width: 5rem;
+                height: 5rem;
+                font-size: 2.8rem;
+            }
+            
+            .modal {
+                padding: 2rem;
+            }
+            
+            .modal-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">✨</span>
+                Portal de Atendimento
+            </a>
+            <button class="menu-btn" aria-label="Menu">☰</button>
+        </div>
+    </header>
 
-  <div class="topbar">
-    <div class="container">
-      <div class="topbar-group">
-        <span>CNPJ: 51.731.732/0001-92</span>
-        <span>Gravataí / RS</span>
-        <span>Atendimento comercial e institucional</span>
-      </div>
-      <div class="topbar-group">
-        <a href="tel:+5551980107050">(51) 98010-7050</a>
-        <a href="mailto:repasulveiculos@outlook.com">repasulveiculos@outlook.com</a>
-      </div>
-    </div>
-  </div>
-
-  <header>
-    <div class="container nav">
-      <a href="#inicio" class="brand">
-        <strong>REPASUL VEÍCULOS</strong>
-        <span>REPASUL VEICULOS LTDA</span>
-      </a>
-
-      <nav class="menu" aria-label="Navegação principal">
-        <a href="#empresa">Empresa</a>
-        <a href="#operacoes">Operações</a>
-        <a href="#privacidade">Privacidade</a>
-        <a href="#contato">Contato</a>
-      </nav>
-
-      <a class="btn btn-primary" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20mais%20informações%20sobre%20os%20veículos." target="_blank" rel="noopener noreferrer">
-        Falar no WhatsApp
-      </a>
-    </div>
-  </header>
-
-  <main id="inicio">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Informações institucionais e operação comercial</span>
-          <h1>Revenda de veículos com apresentação profissional, atendimento claro e operação transparente.</h1>
-          <p class="lead">
-            A REPASUL VEICULOS LTDA atua no segmento de veículos usados e seminovos, com atendimento comercial por canais oficiais, informações empresariais visíveis e comunicação direta com o consumidor.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20atendimento%20comercial." target="_blank" rel="noopener noreferrer">Atendimento via WhatsApp</a>
-            <a class="btn btn-outline" href="#empresa">Ver dados da empresa</a>
-          </div>
-
-          <div class="hero-points">
-            <div class="point">
-              <strong>Identificação empresarial</strong>
-              <span>Razão social, CNPJ, endereço, telefone, e-mail e atendimento oficial.</span>
+    <main>
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span>/</span>
+                <span>Serviços</span>
             </div>
-            <div class="point">
-              <strong>Operação clara</strong>
-              <span>Fluxo comercial descrito de forma objetiva para clientes e validações comerciais.</span>
+
+            <!-- Banner - IMAGEM CORRETA: banner-desk -->
+            <div class="banner">
+                <div class="banner-content">
+                    <span class="banner-badge">Atendimento Especializado</span>
+                    <h1 class="banner-title">
+                        Soluções Financeiras<br>
+                        <span class="banner-highlight">para o seu dia a dia</span>
+                    </h1>
+                    <hr class="banner-line">
+                    <p class="banner-subtitle">Escolha o serviço desejado e nossa equipe irá te atender pelo WhatsApp de forma rápida e segura.</p>
+                </div>
+                <div>
+                    <img class="banner-image" alt="Banner" src="banner-desk" onerror="this.src='https://placehold.co/600x450/1E3A8A/white?text=Serviços'">
+                </div>
             </div>
-            <div class="point">
-              <strong>Privacidade e confiança</strong>
-              <span>Política de tratamento de dados e transparência nas informações do negócio.</span>
+
+            <!-- Services Section -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-badge">Nossos Serviços</span>
+                    <h2 class="section-title">O que você precisa fazer hoje?</h2>
+                    <p class="section-subtitle">Oferecemos soluções completas para você resolver suas pendências financeiras.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Card 1 -->
+                    <div class="service-card">
+                        <div class="card-icon">📄</div>
+                        <h3 class="card-title">2ª via de boleto</h3>
+                        <p class="card-description">Emita a segunda via do seu boleto de financiamento, empréstimo ou fatura do cartão.</p>
+                        <a href="https://wa.me/5511962578242?text=Olá!%20Preciso%20emitir%20uma%202ª%20via%20de%20boleto." target="_blank" class="card-btn">Emitir 2ª via →</a>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="service-card">
+                        <div class="card-icon">🤝</div>
+                        <h3 class="card-title">Renegociação de dívidas</h3>
+                        <p class="card-description">Precisa de mais prazo? Renegocie seu contrato e encontre as melhores condições.</p>
+                        <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20renegociar%20minha%20dívida." target="_blank" class="card-btn">Renegociar agora →</a>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="service-card">
+                        <div class="card-icon">✅</div>
+                        <h3 class="card-title">Quitar parcelas restantes</h3>
+                        <p class="card-description">Quite seu saldo devedor com condições especiais e economize.</p>
+                        <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20simular%20a%20quitação%20antecipada." target="_blank" class="card-btn">Simular quitação →</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <aside class="hero-card" aria-label="Dados principais da empresa">
-          <div class="badge-verified">Verificado em 25 de março de 2026</div>
-          <h2>Dados empresariais</h2>
-
-          <div class="info-list">
-            <div class="info-item">
-              <div class="label">Razão social</div>
-              <div class="value">REPASUL VEICULOS LTDA</div>
+            <!-- Features Section -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-badge">Diferenciais</span>
+                    <h2 class="section-title">Por que escolher nosso atendimento?</h2>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Atendimento Rápido</h3>
+                        <p class="feature-description">Resposta imediata, sem filas de espera.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Segurança Garantida</h3>
+                        <p class="feature-description">Protocolos avançados para proteger seus dados.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">💎</div>
+                        <h3 class="feature-title">Melhores Condições</h3>
+                        <p class="feature-description">Taxas especiais e descontos exclusivos.</p>
+                    </div>
+                </div>
             </div>
-            <div class="info-item">
-              <div class="label">Nome comercial</div>
-              <div class="value">Repasul Veículos</div>
+
+            <!-- Institutional Section -->
+            <div class="institutional">
+                <span class="section-badge">Institucional</span>
+                <h3 class="institutional-title">Compromisso com sua satisfação</h3>
+                <p class="institutional-text">
+                    Há mais de 20 anos no mercado, oferecemos soluções financeiras transparentes e acessíveis. 
+                    Nossa central de serviços foi desenvolvida para simplificar sua vida, oferecendo emissão de 2ª via de boletos, 
+                    renegociação de dívidas e quitação antecipada de parcelas com descontos progressivos. 
+                    Todos os processos são 100% online, seguros e contam com o suporte da nossa equipe especializada.
+                </p>
             </div>
-            <div class="info-item">
-              <div class="label">CNPJ</div>
-              <div class="value">51.731.732/0001-92</div>
+        </div>
+    </main>
+
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="serviceModal">
+        <div class="modal">
+            <div class="modal-icon">📄</div>
+            <h2 class="modal-title">Olá! Como podemos ajudar?</h2>
+            <p class="modal-subtitle">Escolha uma das opções abaixo para ser atendido rapidamente pelo WhatsApp.</p>
+            <div class="modal-buttons">
+                <a href="https://wa.me/5511962578242?text=Olá!%20Preciso%20emitir%20uma%202ª%20via%20de%20boleto." target="_blank" class="modal-btn modal-btn-primary">
+                    📄 2ª via de boleto
+                </a>
+                <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20renegociar%20minha%20dívida." target="_blank" class="modal-btn modal-btn-primary">
+                    🤝 Renegociação de dívidas
+                </a>
+                <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20simular%20a%20quitação%20antecipada." target="_blank" class="modal-btn modal-btn-primary">
+                    ✅ Quitar parcelas restantes
+                </a>
             </div>
-            <div class="info-item">
-              <div class="label">Atividade principal</div>
-              <div class="value">Comércio a varejo de automóveis, camionetas e utilitários usados</div>
-            </div>
-            <div class="info-item">
-              <div class="label">Endereço</div>
-              <div class="value">Av. Dorival Cândido Luz de Oliveira, 7050, Bom Princípio, Gravataí - RS, 94070-000, Brasil</div>
-            </div>
-            <div class="info-item">
-              <div class="label">Telefone / WhatsApp</div>
-              <div class="value">(51) 98010-7050</div>
-            </div>
-            <div class="info-item">
-              <div class="label">E-mail</div>
-              <div class="value">repasulveiculos@outlook.com</div>
-            </div>
-            <div class="info-item">
-              <div class="label">Horário</div>
-              <div class="value">Segunda a sexta: 8h às 19h • Sábado: 8h às 17h</div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="trust-grid">
-          <div class="trust-item">
-            <strong>100%</strong>
-            <span>Atendimento por canais oficiais</span>
-          </div>
-          <div class="trust-item">
-            <strong>CNPJ</strong>
-            <span>Identificação empresarial visível</span>
-          </div>
-          <div class="trust-item">
-            <strong>Loja física</strong>
-            <span>Endereço comercial informado</span>
-          </div>
-          <div class="trust-item">
-            <strong>Privacidade</strong>
-            <span>Tratamento de dados descrito</span>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <section id="empresa">
-      <div class="container">
-        <div class="section-head">
-          <h2>Sobre a empresa</h2>
-          <p>
-            A REPASUL VEICULOS LTDA é uma empresa com atuação no segmento de veículos usados e seminovos, sediada em Gravataí/RS. O site e os canais digitais têm o objetivo de apresentar a empresa, facilitar o contato comercial e apoiar o atendimento ao consumidor.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Atuação atual</h3>
-            <p>
-              A empresa atua na divulgação, apresentação comercial e atendimento relacionados a veículos, fornecendo informações sobre disponibilidade, características gerais e continuidade da negociação pelos canais oficiais.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Atendimento ao consumidor</h3>
-            <p>
-              O consumidor pode entrar em contato por WhatsApp, telefone, e-mail e, quando aplicável, atendimento presencial no endereço comercial informado nesta página.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Transparência institucional</h3>
-            <p>
-              As informações empresariais, operacionais e de privacidade estão reunidas nesta página para reforçar clareza, confiança e consistência da operação comercial.
-            </p>
-          </article>
-        </div>
-
-        <div class="warning">
-          <strong>Esclarecimento importante:</strong> a empresa atua atualmente no segmento de veículos. Esta página tem finalidade institucional e comercial, voltada à apresentação do negócio, canais de atendimento e funcionamento da operação atual.
-        </div>
-      </div>
-    </section>
-
-    <section id="operacoes" style="background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
-      <div class="container">
-        <div class="section-head">
-          <h2>Como funcionam as operações comerciais</h2>
-          <p>
-            Descrição objetiva do fluxo comercial para o consumidor, com foco em clareza sobre atendimento, negociação e disponibilidade.
-          </p>
-        </div>
-
-        <div class="split">
-          <article class="card">
-            <h3>Fluxo de atendimento</h3>
-            <ul>
-              <li>O cliente encontra um anúncio, página institucional ou entra em contato diretamente com a empresa.</li>
-              <li>A equipe comercial apresenta informações sobre veículos, disponibilidade, características e condições gerais.</li>
-              <li>Quando há interesse, o atendimento segue pelos canais oficiais da empresa.</li>
-              <li>Negociação, análise documental, avaliação e etapas complementares são conduzidas pela equipe comercial.</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Como o público recebe o serviço</h3>
-            <ul>
-              <li>O site e os anúncios funcionam como canais de divulgação institucional e comercial.</li>
-              <li>O interessado recebe atendimento por WhatsApp, telefone, e-mail ou presencialmente.</li>
-              <li>As condições finais dependem de disponibilidade do veículo e confirmação comercial direta com a empresa.</li>
-              <li>As informações pessoais fornecidas pelo cliente são usadas para retorno comercial e continuidade do atendimento.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="notice">
-          <strong>Disponibilidade e condições:</strong> preço, disponibilidade, documentação, avaliação de veículo usado, entrada e demais condições devem ser confirmados diretamente com a equipe da REPASUL VEICULOS LTDA no momento do atendimento.
-        </div>
-
-        <div class="warning">
-          <strong>Financiamento e crédito:</strong> quando houver opção de financiamento, a REPASUL VEICULOS LTDA não atua como instituição financeira e não concede crédito próprio. Eventuais propostas, quando disponíveis, são analisadas e operacionalizadas por instituições financeiras parceiras, sujeitas às políticas e critérios dessas instituições.
-        </div>
-      </div>
-    </section>
-
-    <section id="atendimento">
-      <div class="container">
-        <div class="section-head">
-          <h2>Canais oficiais de atendimento</h2>
-          <p>
-            Atendimento comercial e institucional por canais diretos, com informações de contato visíveis e consistentes.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <h3>WhatsApp</h3>
-            <p>Canal ágil para atendimento comercial, dúvidas, disponibilidade e continuidade da negociação.</p>
-            <p style="margin-top:14px;">
-              <a class="btn btn-primary" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20mais%20informações." target="_blank" rel="noopener noreferrer">Iniciar conversa</a>
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Telefone</h3>
-            <p>Contato direto com a empresa para atendimento comercial.</p>
-            <p style="margin-top:14px;font-weight:800;">(51) 98010-7050</p>
-          </article>
-
-          <article class="card">
-            <h3>E-mail</h3>
-            <p>Canal para contato institucional e continuidade do atendimento comercial.</p>
-            <p style="margin-top:14px;font-weight:800;word-break:break-word;">repasulveiculos@outlook.com</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="privacidade" style="background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
-      <div class="container">
-        <div class="section-head">
-          <h2>Política de privacidade e proteção de dados</h2>
-          <p>
-            A empresa valoriza a privacidade de clientes e interessados. Esta seção resume como os dados podem ser tratados no contexto do atendimento comercial.
-          </p>
-        </div>
-
-        <div class="split">
-          <article class="card">
-            <h3>Quais dados podem ser coletados</h3>
-            <ul>
-              <li>Nome e dados de contato informados pelo usuário.</li>
-              <li>Informações enviadas por formulários, e-mail ou WhatsApp.</li>
-              <li>Dados necessários para responder solicitações e continuar o atendimento.</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Como os dados são usados</h3>
-            <ul>
-              <li>Responder dúvidas e solicitações.</li>
-              <li>Enviar informações ligadas ao interesse demonstrado.</li>
-              <li>Dar continuidade ao atendimento comercial.</li>
-              <li>Cumprir obrigações legais e operacionais, quando aplicável.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="split" style="margin-top:22px;">
-          <article class="card">
-            <h3>Compartilhamento e segurança</h3>
-            <p>
-              As informações recebidas são tratadas de forma compatível com a finalidade do atendimento, com medidas administrativas e técnicas razoáveis para proteção dos dados.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Direitos do titular</h3>
-            <p>
-              O titular pode solicitar informações, atualização ou esclarecimentos sobre seus dados por meio do e-mail oficial informado nesta página.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contato">
-      <div class="container">
-        <div class="cta">
-          <div>
-            <h2>Fale com a REPASUL VEÍCULOS</h2>
-            <p>Entre em contato para solicitar atendimento, consultar disponibilidade e receber informações comerciais pelos canais oficiais da empresa.</p>
-          </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20atendimento%20da%20Repasul%20Veículos." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a class="btn btn-outline" style="background:#fff;" href="mailto:repasulveiculos@outlook.com">Enviar e-mail</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <h3>REPASUL VEÍCULOS</h3>
-        <p>REPASUL VEICULOS LTDA</p>
-        <p>CNPJ: 51.731.732/0001-92</p>
-        <p>Av. Dorival Cândido Luz de Oliveira, 7050, Bom Princípio, Gravataí - RS, 94070-000, Brasil</p>
-      </div>
-
-      <div>
-        <h3>Contato</h3>
-        <ul>
-          <li>Telefone / WhatsApp: (51) 98010-7050</li>
-          <li>E-mail: repasulveiculos@outlook.com</li>
-          <li>Segunda a sexta: 8h às 19h</li>
-          <li>Sábado: 8h às 17h</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Informações institucionais</h3>
-        <ul>
-          <li>Segmento atual: veículos usados e seminovos</li>
-          <li>Atividade principal: comércio varejista de veículos usados</li>
-          <li>Política de privacidade nesta página</li>
-          <li>Operação comercial descrita de forma transparente</li>
-        </ul>
-      </div>
     </div>
 
-    <div class="container subfooter">
-      <span>© 2026 REPASUL VEICULOS LTDA. Todos os direitos reservados.</span>
-      <span>Site institucional com foco em transparência comercial.</span>
-    </div>
-  </footer>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank">
+        💬
+    </a>
 
-  <a class="whatsapp-float" href="https://wa.me/5551980107050?text=Olá%2C%20quero%20atendimento." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
-    ⟲
-  </a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 class="footer-title">
+                        <span>📱</span> Portal de Atendimento
+                    </h4>
+                    <p class="footer-text">Soluções financeiras com atendimento humanizado.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Institucional</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">→ Sobre nós</a></li>
+                        <li><a href="#">→ Trabalhe conosco</a></li>
+                        <li><a href="#">→ Política de privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Atendimento</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">→ Central de ajuda</a></li>
+                        <li><a href="#">📱 WhatsApp (11) 96257-8242</a></li>
+                        <li><a href="#">→ Segurança</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>Copyright © 2025 Portal de Atendimento. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const modal = document.getElementById('serviceModal');
+            
+            function openModal() {
+                if (modal) modal.classList.add('active');
+            }
+            
+            function closeModal() {
+                if (modal) modal.classList.remove('active');
+            }
+            
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) closeModal();
+                });
+            }
+            
+            setTimeout(function() {
+                openModal();
+            }, 500);
+        })();
+    </script>
 </body>
 </html>
