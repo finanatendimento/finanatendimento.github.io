@@ -448,7 +448,7 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         
-        /* WHATSAPP FLOAT */
+        /* WHATSAPP FLOAT - ÍCONE CORRETO NÃO DISTORCIDO */
         .whatsapp-float {
             position: fixed;
             bottom: 2rem;
@@ -464,8 +464,12 @@
             transition: var(--transition-default);
             z-index: 1000;
             animation: pulse 2s infinite;
-            font-size: 3.2rem;
-            color: white;
+        }
+        
+        .whatsapp-float svg {
+            width: 3.2rem;
+            height: 3.2rem;
+            fill: white;
         }
         
         @keyframes pulse {
@@ -607,7 +611,11 @@
             .whatsapp-float {
                 width: 5rem;
                 height: 5rem;
-                font-size: 2.8rem;
+            }
+            
+            .whatsapp-float svg {
+                width: 2.8rem;
+                height: 2.8rem;
             }
             
             .modal {
@@ -639,13 +647,11 @@
                 <span>Serviços</span>
             </div>
 
-            <!-- BANNER COM IMAGEM CORRETA: banner-desk.jpg -->
             <div class="banner">
                 <div class="banner-content">
                     <span class="banner-badge">Atendimento Especializado</span>
                     <h1 class="banner-title">
-                        Soluções Financeiras<br>
-                        <span class="banner-highlight">para o seu dia a dia</span>
+                        Área do Cliente
                     </h1>
                     <hr class="banner-line">
                     <p class="banner-subtitle">Escolha o serviço desejado e nossa equipe irá te atender pelo WhatsApp de forma rápida e segura.</p>
@@ -745,8 +751,12 @@
         </div>
     </div>
 
-    <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank">
-        💬
+    <!-- WHATSAPP FLOAT - ÍCONE PERFEITO NÃO DISTORCIDO -->
+    <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM224 416c-33.5 0-65.8-9.5-93-26.1l-10.3-6.3-66.2 17.4 17.6-64.6-6.3-10.3c-16.8-27.2-26.1-59.5-26.1-93 0-102.2 83.1-185.2 185.2-185.2S409.2 121.8 409.2 224 326.1 416 224 416z"/>
+            <path d="M173.2 141.8c-3.6-9-7.2-9.2-10.7-9.4-2.8-.2-6-.2-9.2-.2-3.2 0-8.4 1.2-12.8 6-4.4 4.8-16.8 16.4-16.8 40 0 23.6 17.2 46.4 19.6 49.6 2.4 3.2 33.2 53.2 80.4 74.8 11.2 5.2 19.6 7.6 26.8 9.6 11.2 3.6 21.6 3.2 29.6 2 9.2-1.2 28-11.6 32-22.8 4-11.2 4-20.8 2.8-22.8-1.2-2-4.4-3.2-9.2-5.6s-28-13.6-32.4-15.2c-4.4-1.6-7.6-2.4-10.8 2.4-3.2 4.8-12.4 15.2-15.2 18.4-2.8 3.2-5.6 3.6-10.4 1.2-4.8-2.4-20-7.2-38-23.6-14-12.8-23.6-28.4-26.4-33.2-2.8-4.8-.4-7.2 2-9.6 2.4-2.4 4.8-6 7.2-9.2 2.4-3.2 3.2-5.6 4.8-9.2 1.6-3.6.8-6.8-.4-9.6-1.2-2.8-10.8-25.6-14.8-35.2z"/>
+        </svg>
     </a>
 
     <footer class="footer">
