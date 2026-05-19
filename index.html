@@ -53,26 +53,11 @@
             cursor: pointer;
         }
 
-        /* UTILITY CLASSES */
-        .d-flex { display: flex; }
-        .flex-column { flex-direction: column; }
-        .align-items-center { align-items: center; }
-        .justify-content-center { justify-content: center; }
-        .justify-content-between { justify-content: space-between; }
-        .text-center { text-align: center; }
-        
         .container {
             width: 100%;
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
-        }
-        
-        /* GRID SYSTEM */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 2rem;
         }
         
         /* HEADER */
@@ -582,7 +567,6 @@
             border-top: 1px solid rgba(255,255,255,0.15);
         }
         
-        /* BREADCRUMB */
         .breadcrumb {
             margin-bottom: 2rem;
         }
@@ -596,7 +580,6 @@
             margin: 0 1rem;
         }
         
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .banner {
                 grid-template-columns: 1fr;
@@ -638,7 +621,6 @@
     </style>
 </head>
 <body>
-    <!-- HEADER -->
     <header class="header">
         <div class="container">
             <a href="/" class="logo">
@@ -651,14 +633,13 @@
 
     <main>
         <div class="container">
-            <!-- Breadcrumb -->
             <div class="breadcrumb">
                 <a href="/">Home</a>
                 <span>/</span>
                 <span>Serviços</span>
             </div>
 
-            <!-- Banner - IMAGEM CORRETA: banner-desk -->
+            <!-- BANNER COM IMAGEM CORRETA: banner-desk.jpg -->
             <div class="banner">
                 <div class="banner-content">
                     <span class="banner-badge">Atendimento Especializado</span>
@@ -670,11 +651,10 @@
                     <p class="banner-subtitle">Escolha o serviço desejado e nossa equipe irá te atender pelo WhatsApp de forma rápida e segura.</p>
                 </div>
                 <div>
-                    <img class="banner-image" alt="Banner" src="banner-desk" onerror="this.src='https://placehold.co/600x450/1E3A8A/white?text=Serviços'">
+                    <img class="banner-image" alt="Banner" src="banner-desk.jpg">
                 </div>
             </div>
 
-            <!-- Services Section -->
             <div class="section">
                 <div class="section-header">
                     <span class="section-badge">Nossos Serviços</span>
@@ -683,7 +663,6 @@
                 </div>
                 
                 <div class="services-grid">
-                    <!-- Card 1 -->
                     <div class="service-card">
                         <div class="card-icon">📄</div>
                         <h3 class="card-title">2ª via de boleto</h3>
@@ -691,7 +670,6 @@
                         <a href="https://wa.me/5511962578242?text=Olá!%20Preciso%20emitir%20uma%202ª%20via%20de%20boleto." target="_blank" class="card-btn">Emitir 2ª via →</a>
                     </div>
                     
-                    <!-- Card 2 -->
                     <div class="service-card">
                         <div class="card-icon">🤝</div>
                         <h3 class="card-title">Renegociação de dívidas</h3>
@@ -699,7 +677,6 @@
                         <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20renegociar%20minha%20dívida." target="_blank" class="card-btn">Renegociar agora →</a>
                     </div>
                     
-                    <!-- Card 3 -->
                     <div class="service-card">
                         <div class="card-icon">✅</div>
                         <h3 class="card-title">Quitar parcelas restantes</h3>
@@ -709,7 +686,6 @@
                 </div>
             </div>
 
-            <!-- Features Section -->
             <div class="section">
                 <div class="section-header">
                     <span class="section-badge">Diferenciais</span>
@@ -737,7 +713,6 @@
                 </div>
             </div>
 
-            <!-- Institutional Section -->
             <div class="institutional">
                 <span class="section-badge">Institucional</span>
                 <h3 class="institutional-title">Compromisso com sua satisfação</h3>
@@ -751,7 +726,6 @@
         </div>
     </main>
 
-    <!-- Modal Popup -->
     <div class="modal-overlay" id="serviceModal">
         <div class="modal">
             <div class="modal-icon">📄</div>
@@ -771,12 +745,10 @@
         </div>
     </div>
 
-    <!-- WhatsApp Float Button -->
     <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank">
         💬
     </a>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
