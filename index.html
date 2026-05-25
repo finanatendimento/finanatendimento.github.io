@@ -1,825 +1,694 @@
 <!DOCTYPE html>
-<html class="ltr" dir="ltr" lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="description" content="Portal de Atendimento - Emita sua 2ª via de boleto, renegocie ou quite suas dívidas de forma rápida e segura.">
-    <title>Portal de Atendimento | Soluções Financeiras</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Paschoalotto Serviços Financeiros</title>
+    <meta name="description" content="A Paschoalotto é uma empresa de outsourcing em serviços financeiros e atendimento que há duas décadas transforma experiência em resultados.">
+    <!-- Preconnect and Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #F8FAFF 0%, #F0F2F8 100%);
-            color: #1A1F36;
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #1a1a1a;
             overflow-x: hidden;
         }
-
-        :root {
-            --color-primary: #1E3A8A;
-            --color-primary-dark: #152E6E;
-            --color-primary-high: #0F244F;
-            --color-primary-light: #E0E7FF;
-            --color-primary-low: #F0F4FF;
-            --color-secondary: #3B82F6;
-            --color-content-low: #6B7280;
-            --border-radius-lg: 2rem;
-            --border-radius-xl: 3rem;
-            --box-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --transition-default: all 0.3s ease;
-        }
-
-        html {
-            font-size: 62.5%;
-            scroll-behavior: smooth;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .container {
+        .notification {
+            background-color: #0051FA;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
             width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* HEADER */
-        .header { 
-            background: rgba(255, 255, 255, 0.98); 
-            backdrop-filter: blur(10px);
-            position: fixed; 
-            width: 100%; 
-            top: 0; 
-            z-index: 1000; 
-            box-shadow: var(--box-shadow-sm);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            padding: 1.2rem 0;
-        }
-        
-        .header .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        
-        .logo-icon {
-            width: 3.2rem;
-            height: 3.2rem;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            border-radius: 0.8rem;
+            min-height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 13px;
+            position: relative;
+            z-index: 9999;
+            flex-wrap: wrap;
         }
-        
-        .menu-btn {
-            width: 4rem;
-            height: 4rem;
-            background: var(--color-primary-light);
+        .notification a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .notification a:hover {
+            text-decoration: underline;
+        }
+        .close-btn {
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            background: transparent;
+            border: none;
+            color: white;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .principal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+        .logo img {
+            max-height: 48px;
+            width: auto;
+        }
+        nav {
+            display: none;
+        }
+        .chamaResponsivo {
+            display: block;
+            font-size: 26px;
+            cursor: pointer;
+            color: #001d4a;
+        }
+        .menuResponsivo {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            background: white;
+            z-index: 99999;
+            transition: 0.3s;
+            padding: 30px 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        .menuResponsivo.active {
+            left: 0;
+        }
+        .menu-mobile-container ul {
+            list-style: none;
+            margin-top: 40px;
+        }
+        .menu-mobile-container li {
+            margin: 20px 0;
+        }
+        .menu-mobile-container a {
+            text-decoration: none;
+            color: #001d4a;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .info-intro {
+            background-image: url('https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/banner-home-1.webp');
+            background-size: cover;
+            background-position: center right;
+            background-repeat: no-repeat;
+            position: relative;
+            padding: 90px 0;
+        }
+        .info-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,20,60,0.85) 0%, rgba(0,40,100,0.7) 100%);
+            z-index: 1;
+        }
+        .info-intro .container {
+            position: relative;
+            z-index: 2;
+        }
+        .margin-info-intro {
+            padding: 40px 0;
+        }
+        .txtBranco {
+            color: white;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .disclaimer {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 32px;
+            line-height: 1.4;
+            max-width: 90%;
+            opacity: 0.95;
+        }
+        .cta_primary {
+            background-color: #0051FA;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .cta_primary:hover {
+            background-color: #003dbf;
+            transform: scale(1.02);
+        }
+        .ns {
+            padding: 70px 0;
+            background: #f8fafc;
+        }
+        .azulPasc {
+            color: #001d4a;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        .card-link {
+            text-decoration: none;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            height: 100%;
+            border: 1px solid #eef2f6;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+        }
+        .card-text {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #001d4a;
+            margin-bottom: 20px;
+        }
+        .icon img {
+            width: 48px;
+            height: 48px;
+        }
+        .midia {
+            padding: 60px 0;
+            background: white;
+        }
+        .alignCenter h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #001d4a;
+        }
+        .owl-carousel {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            list-style: none;
+            padding: 20px 0;
+        }
+        .box img {
+            max-height: 60px;
+        }
+        .vsp {
+            background: #eef3ff;
+            padding: 70px 0;
+        }
+        .vsp h2 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: #001d4a;
+        }
+        .vsp span {
+            color: #0051FA;
+        }
+        .vsp h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 20px 0;
+            line-height: 1.5;
+            color: #2d3a4b;
+        }
+        .vsp img {
+            max-width: 100%;
+            border-radius: 24px;
+        }
+        .faq {
+            padding: 70px 0;
+            background: white;
+        }
+        .faq h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #001d4a;
+        }
+        .duvidas__list {
+            list-style: none;
+        }
+        .duvidas__list li {
+            background: #f8fafc;
+            margin-bottom: 16px;
+            border-radius: 16px;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .duvidas__list li h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 20px 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .duvidas__list li .content {
+            display: none;
+            padding-bottom: 20px;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+        .duvidas__list li.open .content {
+            display: block;
+        }
+        .duvidas__list li i {
+            font-size: 1.2rem;
+            color: #0051FA;
+        }
+        footer {
+            background: #0b1a2e;
+            color: #cdd9f0;
+            padding: 50px 0 30px;
+        }
+        .footerRow a {
+            color: #cdd9f0;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .contLogo img {
+            max-height: 48px;
+            margin-bottom: 20px;
+        }
+        .contSocial {
+            margin: 20px 0;
+        }
+        .social ul {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+            margin-top: 12px;
+        }
+        .social i {
+            font-size: 24px;
+            color: white;
+        }
+        .unidade {
+            margin-bottom: 18px;
+        }
+        .links ul {
+            list-style: none;
+        }
+        .links li {
+            margin-bottom: 12px;
+        }
+        .whats__fluante {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: #25D366;
+            color: white;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition-default);
-            font-size: 2rem;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: 0.2s;
         }
-        
-        .menu-btn:hover {
-            background: var(--color-primary);
-            color: white;
-        }
-        
-        /* MAIN CONTENT */
-        main {
-            margin-top: 8rem;
-        }
-        
-        /* BANNER */
-        .banner {
-            background: linear-gradient(135deg, var(--color-primary-high) 0%, var(--color-primary) 100%);
-            border-radius: var(--border-radius-xl);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-        }
-        
-        .banner-content {
-            padding: 5rem;
-            color: white;
-        }
-        
-        .banner-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 5rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
-        
-        .banner-title {
-            font-size: 4.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-        
-        .banner-highlight {
-            color: var(--color-secondary);
-        }
-        
-        .banner-line {
-            width: 7rem;
-            height: 0.4rem;
-            background: var(--color-secondary);
-            border: none;
-            margin: 2rem 0;
-        }
-        
-        .banner-subtitle {
-            font-size: 1.8rem;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
-        
-        .banner-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        
-        /* SECTION STYLES */
-        .section {
-            margin-top: 5rem;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-badge {
-            display: inline-block;
-            background: var(--color-primary-light);
-            color: var(--color-primary);
-            padding: 0.6rem 1.5rem;
-            border-radius: 5rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        .section-title {
-            font-size: 3.6rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        
-        .section-subtitle {
-            color: var(--color-content-low);
-            font-size: 1.6rem;
-        }
-        
-        /* SERVICES CARDS */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            padding: 3rem 2rem;
-            transition: var(--transition-default);
-            border: 1px solid rgba(30,58,138,0.1);
-            box-shadow: var(--box-shadow-sm);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            height: 100%;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--box-shadow-xl);
-        }
-        
-        .card-icon {
-            width: 8rem;
-            height: 8rem;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            border-radius: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            font-size: 3.5rem;
-        }
-        
-        .card-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--color-primary-dark);
-        }
-        
-        .card-description {
-            font-size: 1.4rem;
-            color: var(--color-content-low);
-            margin-bottom: 2rem;
-            line-height: 1.5;
-            flex: 1;
-        }
-        
-        .card-btn {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            color: white;
-            padding: 1.2rem 2rem;
-            border-radius: 5rem;
-            font-weight: 600;
-            font-size: 1.4rem;
-            display: inline-block;
-            transition: var(--transition-default);
-            width: 100%;
-            max-width: 200px;
-            text-align: center;
-        }
-        
-        .card-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow-md);
-            filter: brightness(1.05);
-        }
-        
-        /* FEATURES GRID */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-        
-        .feature-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            padding: 2.5rem 2rem;
-            transition: var(--transition-default);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--box-shadow-md);
-        }
-        
-        .feature-icon {
-            width: 7rem;
-            height: 7rem;
-            background: linear-gradient(135deg, var(--color-primary-light) 0%, #E9EEFD 100%);
-            border-radius: 1.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.8rem;
-            font-size: 3rem;
-        }
-        
-        .feature-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-        }
-        
-        .feature-description {
-            font-size: 1.4rem;
-            color: var(--color-content-low);
-            line-height: 1.5;
-        }
-        
-        /* INSTITUCIONAL */
-        .institutional {
-            background: var(--color-primary-low);
-            border-radius: var(--border-radius-xl);
-            padding: 4rem 3rem;
-            text-align: center;
-            margin-top: 5rem;
-        }
-        
-        .institutional-title {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: var(--color-primary-dark);
-            margin-bottom: 1.5rem;
-        }
-        
-        .institutional-text {
-            font-size: 1.6rem;
-            line-height: 1.6;
-            color: var(--color-content-low);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* MODAL */
-        .modal-overlay {
+        .modal-popup {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+            z-index: 100000;
+            backdrop-filter: blur(5px);
         }
-        
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal {
+        .modal-content-popup {
             background: white;
-            border-radius: 2.4rem;
-            max-width: 500px;
+            max-width: 460px;
             width: 90%;
-            padding: 3rem;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-        
-        .modal-overlay.active .modal {
-            transform: scale(1);
-        }
-        
-        .modal-icon {
-            font-size: 5rem;
+            border-radius: 32px;
             text-align: center;
-            margin-bottom: 1rem;
+            padding: 30px 24px 40px;
+            box-shadow: 0 30px 40px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.4s ease;
+            position: relative;
         }
-        
-        .modal-title {
-            font-size: 2.4rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #1E3A8A;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        .modal-subtitle {
-            text-align: center;
-            color: #6B7280;
-            margin-bottom: 2.5rem;
-            font-size: 1.4rem;
+        .modal-logo img {
+            max-height: 70px;
+            width: auto;
         }
-        
-        .modal-buttons {
+        .modal-content-popup h3 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #001d4a;
+            margin-bottom: 8px;
+        }
+        .modal-sub {
+            color: #4a5b6e;
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+        .popup-buttons {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 14px;
         }
-        
-        .modal-btn {
-            padding: 1.4rem;
-            border-radius: 5rem;
+        .btn-popup {
+            padding: 14px 20px;
+            border-radius: 60px;
             font-weight: 600;
-            font-size: 1.6rem;
-            text-align: center;
-            transition: all 0.2s;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .modal-btn-primary {
-            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-            color: white;
-        }
-        
-        .modal-btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* WHATSAPP FLOAT - ÍCONE CORRETO NÃO DISTORCIDO */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: #25D366;
-            width: 6rem;
-            height: 6rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--box-shadow-lg);
-            transition: var(--transition-default);
-            z-index: 1000;
-            animation: pulse 2s infinite;
-        }
-        
-        .whatsapp-float svg {
-            width: 3.2rem;
-            height: 3.2rem;
-            fill: white;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.08);
-            background-color: #128C7E;
-            animation: none;
-        }
-        
-        /* FOOTER */
-        .footer {
-            background: linear-gradient(135deg, #0F244F 0%, #152E6E 100%);
-            color: white;
-            padding: 5rem 0 3rem;
-            margin-top: 6rem;
-            border-radius: 3rem 3rem 0 0;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-        }
-        
-        .footer-title {
-            font-weight: 700;
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .footer-text {
-            font-size: 1.4rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.5;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            font-size: 1.4rem;
-            color: rgba(255,255,255,0.75);
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(3px);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .social-links a {
-            width: 4rem;
-            height: 4rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-            font-size: 2rem;
+            font-size: 1rem;
             text-decoration: none;
-            color: white;
-        }
-        
-        .social-links a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
+            transition: 0.2s;
+            display: inline-block;
+            width: 100%;
             text-align: center;
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.6);
-            margin-top: 4rem;
-            padding-top: 2.5rem;
-            border-top: 1px solid rgba(255,255,255,0.15);
         }
-        
-        .breadcrumb {
-            margin-bottom: 2rem;
+        /* Todos os botões do popup agora na cor azul */
+        .btn-popup-blue {
+            background: #0051FA;
+            color: white;
+            border: none;
         }
-        
-        .breadcrumb a {
-            color: var(--color-primary);
+        .btn-popup-blue:hover {
+            background: #003dbf;
+            transform: scale(1.02);
         }
-        
-        .breadcrumb span {
-            color: var(--color-content-low);
-            margin: 0 1rem;
+        .close-modal {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #8e9eae;
         }
-        
+        .close-modal:hover {
+            color: #001d4a;
+        }
         @media (max-width: 768px) {
-            .banner {
-                grid-template-columns: 1fr;
-            }
-            
-            .banner-content {
-                padding: 3rem;
-            }
-            
-            .banner-title {
-                font-size: 3rem;
-            }
-            
-            .services-grid,
-            .features-grid,
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 2.4rem;
-            }
-            
-            .whatsapp-float {
-                width: 5rem;
-                height: 5rem;
-            }
-            
-            .whatsapp-float svg {
-                width: 2.8rem;
-                height: 2.8rem;
-            }
-            
-            .modal {
-                padding: 2rem;
-            }
-            
-            .modal-title {
-                font-size: 2rem;
-            }
+            h1 { font-size: 2rem; }
+            .disclaimer { font-size: 1rem; }
+            .row { flex-direction: column; }
+            .vsp .row { flex-direction: column-reverse; }
+            .alignCenter h2 { text-align: center; }
+            .margin-info-intro { text-align: center; }
+            .disclaimer { max-width: 100%; }
         }
+        .row { display: flex; flex-wrap: wrap; }
+        .col-lg-2, .col-lg-10, .col-md-4, .col-md-7, .col-md-6, .col-lg-3, .col-lg-6, .col-md-8, .col-sm-12 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        @media (min-width: 768px) {
+            .col-md-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+            .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+            .col-md-7 { flex: 0 0 58.333%; max-width: 58.333%; }
+            .col-md-8 { flex: 0 0 66.666%; max-width: 66.666%; }
+            .col-lg-2 { flex: 0 0 16.666%; max-width: 16.666%; }
+            .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+            .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+            .col-lg-10 { flex: 0 0 83.333%; max-width: 83.333%; }
+        }
+        .avisoCookies {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #1a2c42;
+            color: white;
+            padding: 16px;
+            z-index: 10000;
+        }
+        .btnAzulMedio { background: #0051FA; border-radius: 40px; }
+        .whats-link { cursor: pointer; }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <a href="/" class="logo">
-                <span class="logo-icon">✨</span>
-                Portal de Atendimento
-            </a>
-            <button class="menu-btn" aria-label="Menu">☰</button>
-        </div>
-    </header>
 
-    <main>
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="/">Home</a>
-                <span>/</span>
-                <span>Serviços</span>
+<div class="notification" id="topNotification">
+    <a href="https://wa.me/5511962578242" target="_blank">
+        Recebeu uma ligação indevida da Paschoalotto? Fale com nosso suporte oficial clicando aqui
+    </a>
+    <button class="close-btn" onclick="document.getElementById('topNotification').style.display='none'">X</button>
+</div>
+
+<header>
+    <div class="container">
+        <div class="principal">
+            <div class="logo">
+                <a href="#"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/logo/logo-np.webp" alt="Paschoalotto"></a>
             </div>
-
-            <div class="banner">
-                <div class="banner-content">
-                    <span class="banner-badge">Atendimento Especializado</span>
-                    <h1 class="banner-title">
-                        Área do Cliente
-                    </h1>
-                    <hr class="banner-line">
-                    <p class="banner-subtitle">Escolha o serviço desejado e nossa equipe irá te atender pelo WhatsApp de forma rápida e segura.</p>
-                </div>
-                <div>
-                    <img class="banner-image" alt="Banner" src="banner-desk.jpg">
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-header">
-                    <span class="section-badge">Nossos Serviços</span>
-                    <h2 class="section-title">O que você precisa fazer hoje?</h2>
-                    <p class="section-subtitle">Oferecemos soluções completas para você resolver suas pendências financeiras.</p>
-                </div>
-                
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="card-icon">📄</div>
-                        <h3 class="card-title">2ª via de boleto</h3>
-                        <p class="card-description">Emita a segunda via do seu boleto de financiamento, empréstimo ou fatura do cartão.</p>
-                        <a href="https://wa.me/5511962578242?text=Olá!%20Preciso%20emitir%20uma%202ª%20via%20de%20boleto." target="_blank" class="card-btn">Emitir 2ª via →</a>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="card-icon">🤝</div>
-                        <h3 class="card-title">Renegociação de dívidas</h3>
-                        <p class="card-description">Precisa de mais prazo? Renegocie seu contrato e encontre as melhores condições.</p>
-                        <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20renegociar%20minha%20dívida." target="_blank" class="card-btn">Renegociar agora →</a>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="card-icon">✅</div>
-                        <h3 class="card-title">Quitar parcelas restantes</h3>
-                        <p class="card-description">Quite seu saldo devedor com condições especiais e economize.</p>
-                        <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20simular%20a%20quitação%20antecipada." target="_blank" class="card-btn">Simular quitação →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-header">
-                    <span class="section-badge">Diferenciais</span>
-                    <h2 class="section-title">Por que escolher nosso atendimento?</h2>
-                </div>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3 class="feature-title">Atendimento Rápido</h3>
-                        <p class="feature-description">Resposta imediata, sem filas de espera.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3 class="feature-title">Segurança Garantida</h3>
-                        <p class="feature-description">Protocolos avançados para proteger seus dados.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">💎</div>
-                        <h3 class="feature-title">Melhores Condições</h3>
-                        <p class="feature-description">Taxas especiais e descontos exclusivos.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="institutional">
-                <span class="section-badge">Institucional</span>
-                <h3 class="institutional-title">Compromisso com sua satisfação</h3>
-                <p class="institutional-text">
-                    Há mais de 20 anos no mercado, oferecemos soluções financeiras transparentes e acessíveis. 
-                    Nossa central de serviços foi desenvolvida para simplificar sua vida, oferecendo emissão de 2ª via de boletos, 
-                    renegociação de dívidas e quitação antecipada de parcelas com descontos progressivos. 
-                    Todos os processos são 100% online, seguros e contam com o suporte da nossa equipe especializada.
-                </p>
-            </div>
-        </div>
-    </main>
-
-    <div class="modal-overlay" id="serviceModal">
-        <div class="modal">
-            <div class="modal-icon">📄</div>
-            <h2 class="modal-title">Olá! Como podemos ajudar?</h2>
-            <p class="modal-subtitle">Escolha uma das opções abaixo para ser atendido rapidamente pelo WhatsApp.</p>
-            <div class="modal-buttons">
-                <a href="https://wa.me/5511962578242?text=Olá!%20Preciso%20emitir%20uma%202ª%20via%20de%20boleto." target="_blank" class="modal-btn modal-btn-primary">
-                    📄 2ª via de boleto
-                </a>
-                <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20renegociar%20minha%20dívida." target="_blank" class="modal-btn modal-btn-primary">
-                    🤝 Renegociação de dívidas
-                </a>
-                <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20simular%20a%20quitação%20antecipada." target="_blank" class="modal-btn modal-btn-primary">
-                    ✅ Quitar parcelas restantes
-                </a>
+            <div class="chamaResponsivo" onclick="toggleMenuMobile()">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </div>
+</header>
 
-    <!-- WHATSAPP FLOAT - ÍCONE PERFEITO NÃO DISTORCIDO -->
-    <a href="https://wa.me/5511962578242?text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM224 416c-33.5 0-65.8-9.5-93-26.1l-10.3-6.3-66.2 17.4 17.6-64.6-6.3-10.3c-16.8-27.2-26.1-59.5-26.1-93 0-102.2 83.1-185.2 185.2-185.2S409.2 121.8 409.2 224 326.1 416 224 416z"/>
-            <path d="M173.2 141.8c-3.6-9-7.2-9.2-10.7-9.4-2.8-.2-6-.2-9.2-.2-3.2 0-8.4 1.2-12.8 6-4.4 4.8-16.8 16.4-16.8 40 0 23.6 17.2 46.4 19.6 49.6 2.4 3.2 33.2 53.2 80.4 74.8 11.2 5.2 19.6 7.6 26.8 9.6 11.2 3.6 21.6 3.2 29.6 2 9.2-1.2 28-11.6 32-22.8 4-11.2 4-20.8 2.8-22.8-1.2-2-4.4-3.2-9.2-5.6s-28-13.6-32.4-15.2c-4.4-1.6-7.6-2.4-10.8 2.4-3.2 4.8-12.4 15.2-15.2 18.4-2.8 3.2-5.6 3.6-10.4 1.2-4.8-2.4-20-7.2-38-23.6-14-12.8-23.6-28.4-26.4-33.2-2.8-4.8-.4-7.2 2-9.6 2.4-2.4 4.8-6 7.2-9.2 2.4-3.2 3.2-5.6 4.8-9.2 1.6-3.6.8-6.8-.4-9.6-1.2-2.8-10.8-25.6-14.8-35.2z"/>
-        </svg>
-    </a>
+<!-- Menu Mobile -->
+<div class="menuResponsivo" id="menuMobile">
+    <div style="text-align:right; margin-bottom:20px;">
+        <i class="fas fa-times" style="font-size:24px; cursor:pointer;" onclick="toggleMenuMobile()"></i>
+    </div>
+    <ul class="menu-mobile-container">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">A Paschoalotto</a>
+            <ul style="padding-left:20px;">
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Clube de Vantagens</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Nossas Soluções</a></li>
+        <li><a href="#">Quero Pagar</a>
+            <ul style="padding-left:20px;">
+                <li><a href="#">Quitar pendências</a></li>
+                <li><a href="#">2ª via de boleto</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="whats-link-mobile">Atendimento</a></li>
+    </ul>
+</div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4 class="footer-title">
-                        <span>📱</span> Portal de Atendimento
-                    </h4>
-                    <p class="footer-text">Soluções financeiras com atendimento humanizado.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="LinkedIn">💼</a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="footer-title">Institucional</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">→ Sobre nós</a></li>
-                        <li><a href="#">→ Trabalhe conosco</a></li>
-                        <li><a href="#">→ Política de privacidade</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="footer-title">Atendimento</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">→ Central de ajuda</a></li>
-                        <li><a href="#">📱 WhatsApp (11) 96257-8242</a></li>
-                        <li><a href="#">→ Segurança</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>Copyright © 2025 Portal de Atendimento. Todos os direitos reservados.</p>
+<!-- Hero Section -->
+<section class="info-intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 margin-info-intro">
+                <h1 class="txtBranco">Facilite sua vida com o Pagou Fácil da Paschoalotto</h1>
+                <h2 class="txtBranco disclaimer">Com apenas alguns cliques, você pode resolver suas pendências e encontrar soluções para sua vida financeira.</h2>
+                <a href="#" class="txtBranco cta_primary btnAzulMedio whats-link" data-whats="atendimento">Atendimento</a>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script>
-        (function() {
-            const modal = document.getElementById('serviceModal');
-            
-            function openModal() {
-                if (modal) modal.classList.add('active');
-            }
-            
-            function closeModal() {
-                if (modal) modal.classList.remove('active');
-            }
-            
-            if (modal) {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) closeModal();
-                });
-            }
-            
-            setTimeout(function() {
-                openModal();
-            }, 500);
-        })();
-    </script>
+<section class="ns">
+    <div class="container">
+        <h2 class="azulPasc">Soluções Paschoalotto<br> para o seu dia a dia</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6"><a href="#" class="card-link whats-link" data-whats="regularizar"><div class="card"><div class="card-body"><p class="card-text">Regularize<br> seus débitos</p><div class="icon"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/icon/lift_to_talk.png" alt=""></div></div></div></a></div>
+            <div class="col-lg-3 col-md-6 col-sm-6"><a href="#" class="card-link whats-link" data-whats="2via"><div class="card"><div class="card-body"><p class="card-text">Solicite a 2ª via<br> do boleto</p><div class="icon"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/icon/barcode.png" alt=""></div></div></div></a></div>
+            <div class="col-lg-3 col-md-6 col-sm-6"><a href="#" class="card-link whats-link" data-whats="ouvidoria"><div class="card"><div class="card-body"><p class="card-text">Fale com a<br> ouvidoria</p><div class="icon"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/icon/headset_mic.png" alt=""></div></div></div></a></div>
+            <div class="col-lg-3 col-md-6 col-sm-6"><a href="#" class="card-link whats-link" data-whats="contratar"><div class="card"><div class="card-body"><p class="card-text">Contrate as soluções<br> para seu negócio</p><div class="icon"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/icon/action_key.png" alt=""></div></div></div></a></div>
+        </div>
+    </div>
+</section>
+
+<section class="midia">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 alignCenter"><h2>O que andam <br>falando sobre nós</h2></div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <ul class="owl-carousel owlMidia" style="display:flex; list-style:none; gap:30px; overflow-x:auto;">
+                    <li><div class="box"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/midia/01exame.png" alt="exame" style="max-height:50px;"></div></li>
+                    <li><div class="box"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/midia/02estadao.png" alt="estadao" style="max-height:50px;"></div></li>
+                    <li><div class="box"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/midia/03ve.png" alt="veja" style="max-height:50px;"></div></li>
+                    <li><div class="box"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/midia/04metropoles.png" alt="metropoles" style="max-height:50px;"></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="vsp">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <h2>Vem ser<br><span>#Paschoalover!</span></h2>
+                <h3>Conheça as oportunidades de carreira na Paschoalotto e junte-se a nós em nossa missão de ser parte da solução para pessoas, empresas e comunidades.</h3>
+                <a href="#" class="cta_primary whats-link" data-whats="atendimento">Atendimento</a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img loading="lazy" src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/VSP-2026.png" alt="Vem ser Paschoalover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 offset-md-1"><h2>Perguntas<br> frequentes</h2></div>
+            <div class="col-md-8">
+                <div class="box__duvidas">
+                    <ul class="duvidas__list" id="faqList">
+                        <li class="open"><h3>Como resolver minhas contas com a Paschoalotto? <i class="fa-solid fa-xmark"></i></h3><div class="content"><p>Quitar suas pendências com a Paschoalotto é um processo simples e fácil. Você pode acessar nossa plataforma digital em <a href="#">www.pagoufacil.com.br</a> ou entrar em contato conosco via WhatsApp pelo número <strong>(11) 96257-8242</strong>.</p></div></li>
+                        <li><h3>Não encontrei minha conta na Paschoalotto, e agora? <i class="fa-solid fa-plus"></i></h3><div class="content"><p>Se você não encontrou sua pendência cadastrada na Paschoalotto, é possível que ela esteja vinculada diretamente à empresa credora. Nesse caso, sugerimos que entre em contato com a empresa credora para regularizar seus débitos.</p></div></li>
+                        <li><h3>Já quitei meu débito, mas meu nome ainda continua restrito. O que devo fazer? <i class="fa-solid fa-plus"></i></h3><div class="content"><p>Após gerar seu acordo e efetuar o pagamento do boleto, enviaremos as informações à empresa credora da negociação. Esse processo costuma ser rápido, porém, em alguns casos, pode levar até 7 dias para que a restrição seja retirada.</p></div></li>
+                        <li><h3>Não recebi o meu boleto para pagamento. O que devo fazer? <i class="fa-solid fa-plus"></i></h3><div class="content"><p>Sabemos da importância de manter o seu acordo em dia e, por essa razão, você pode ter acesso à segunda via do seu boleto. Caso precise de um atendimento digital, fale com a gente através do WhatsApp.</p></div></li>
+                        <li><h3>Tenho boletos da Paschoalotto gerados no meu Débito Direto Autorizado <i class="fa-solid fa-plus"></i></h3><div class="content"><p>O Débito Direto Autorizado é mais uma forma de pagamento de contas e boletos, possibilitando que o titular da conta tenha o controle e/ou visualize todos os boletos emitidos em seu CPF ou CNPJ.</p></div></li>
+                        <li><h3>Fiz o pagamento e continuo recebendo cobranças. <i class="fa-solid fa-plus"></i></h3><div class="content"><p>Atuamos como representantes das empresas credoras na recuperação do crédito, após o pagamento recebemos a comunicação da compensação do pagamento e as cobranças são encerradas.</p></div></li>
+                        <li><h3>Realizei o pagamento e continuo com o nome negativado. <i class="fa-solid fa-plus"></i></h3><div class="content"><p>A inclusão ou retirada da restrição (negativação do nome) é de responsabilidade e é um processo realizado pela empresa credora. O prazo para retirada da negativação é de até 5 dias úteis.</p></div></li>
+                        <li><h3>Gravame não baixou, meu veículo permanece alienado ao Banco. <i class="fa-solid fa-plus"></i></h3><div class="content"><p>A inclusão ou retirada da alienação, ou seja, a baixa do gravame, é de responsabilidade e é um processo realizado pelo Banco credor.</p></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row footerRow">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12"><div class="contLogo"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/logo/logo-np.webp" alt="Paschoalotto"></div></div>
+                    <div class="col-md-12"><div class="contSocial"><img style="max-width: 140px;" src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/seloReclameAqui.png" alt="Reclame aqui"></div>
+                    <div class="contSocial"><div class="social"><p>Siga a Paschoalotto</p><ul><li><a href="#"><i class="fab fa-facebook"></i></a></li><li><a href="#"><i class="fab fa-instagram"></i></a></li><li><a href="#"><i class="fab fa-linkedin"></i></a></li><li><a href="#"><i class="fab fa-tiktok"></i></a></li><li><a href="#"><i class="fab fa-twitter"></i></a></li><li><a href="#"><i class="fab fa-youtube"></i></a></li></ul></div></div></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12"><address class="content"><div class="unidade"><strong>Bauru</strong><br>Rua Professor Durval Guedes de Azevedo, 2-144. CEP. 17012-633</div><div class="unidade"><strong>Marília</strong><br>Rua Dr. Próspero Cecílio Coimbra, 330. CEP. 17525-160</div><div class="unidade"><strong>Agudos</strong><br>Avenida João Wolber, 295. CEP. 17120-000</div><div class="unidade"><strong>Ribeirão Preto</strong><br>Rua Antônio Fernandes Figuerôa, 1400. CEP. 14095-280</div></address></div>
+                    <div class="col-lg-6 col-md-12"><div class="links"><ul><li><strong>Ajuda</strong></li><li><a href="#">Política de Privacidade</a></li><li><a href="#">Política de Segurança da Informação</a></li><li><a href="#">Código de Ética e Conduta</a></li><li><a href="#">Portal do Titular de Dados</a></li><li><a href="#">Denuncie uma fraude</a></li></ul></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a href="#" class="whats__fluante whats-link" data-whats="flutuante"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Popup com 3 botões TODOS NA COR AZUL -->
+<div id="popupPrincipal" class="modal-popup" style="display: flex;">
+    <div class="modal-content-popup">
+        <span class="close-modal" onclick="fecharPopup()">&times;</span>
+        <div class="modal-logo"><img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/logo/logo-np.webp" alt="Paschoalotto Logo"></div>
+        <h3>Olá, bem-vindo!</h3>
+        <div class="modal-sub">Escolha uma opção para prosseguir</div>
+        <div class="popup-buttons">
+            <a href="#" class="btn-popup btn-popup-blue whats-link" data-whats="2via_boleto"><i class="fas fa-barcode" style="margin-right: 8px;"></i> 2ª via de boleto</a>
+            <a href="#" class="btn-popup btn-popup-blue whats-link" data-whats="quitacao"><i class="fas fa-hand-holding-usd" style="margin-right: 8px;"></i> Quitação de contrato</a>
+            <a href="#" class="btn-popup btn-popup-blue whats-link" data-whats="atendimento"><i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Atendimento</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const ZAP_NUMBER = "5511962578242";
+    function redirectToWhatsApp(message) {
+        let text = "Olá! Gostaria de mais informações sobre ";
+        if(message === "atendimento") text = "Olá! Preciso de atendimento.";
+        else if(message === "regularizar") text = "Olá! Preciso regularizar meus débitos.";
+        else if(message === "2via") text = "Olá! Solicitar 2ª via de boleto.";
+        else if(message === "ouvidoria") text = "Olá! Gostaria de falar com a ouvidoria.";
+        else if(message === "contratar") text = "Olá! Tenho interesse nas soluções para empresas.";
+        else if(message === "2via_boleto") text = "Olá! Solicitar 2ª via de boleto.";
+        else if(message === "quitacao") text = "Olá! Quero quitar meu contrato.";
+        else text = "Olá! Gostaria de ser atendido.";
+        const encoded = encodeURIComponent(text);
+        window.open(`https://wa.me/${ZAP_NUMBER}?text=${encoded}`, '_blank');
+    }
+
+    document.querySelectorAll('.whats-link').forEach(el => {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            const type = this.getAttribute('data-whats') || 'atendimento';
+            redirectToWhatsApp(type);
+        });
+    });
+    document.querySelectorAll('.whats-link-mobile').forEach(el => {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            redirectToWhatsApp('atendimento');
+        });
+    });
+
+    function fecharPopup() { document.getElementById('popupPrincipal').style.display = 'none'; }
+    window.onclick = function(event) { const modal = document.getElementById('popupPrincipal'); if (event.target === modal) modal.style.display = 'none'; }
+    function toggleMenuMobile() { document.getElementById('menuMobile').classList.toggle('active'); }
+    
+    const faqItems = document.querySelectorAll('.duvidas__list li');
+    faqItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            if(e.target.tagName === 'A') return;
+            const isOpen = item.classList.contains('open');
+            faqItems.forEach(li => { li.classList.remove('open'); const ic = li.querySelector('i'); if(ic) { ic.classList.remove('fa-xmark'); ic.classList.add('fa-plus'); } });
+            if(!isOpen) { item.classList.add('open'); const icon = item.querySelector('i'); if(icon) { icon.classList.remove('fa-plus'); icon.classList.add('fa-xmark'); } }
+            else { item.classList.remove('open'); const icon = item.querySelector('i'); if(icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-plus'); } }
+        });
+    });
+    
+    const cookieDiv = document.createElement('div'); cookieDiv.className = 'avisoCookies';
+    cookieDiv.innerHTML = `<div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;"><p style="margin:0;">Utilizamos cookies essenciais de acordo com a nossa Política de Privacidade.</p><div><button style="background:#0051FA; border:none; padding:8px 20px; border-radius:30px; color:white; cursor:pointer;">Fechar</button></div></div>`;
+    document.body.appendChild(cookieDiv);
+    cookieDiv.querySelector('button').addEventListener('click', () => cookieDiv.remove());
+    
+    window.addEventListener('click', function(e) { 
+        if(e.target.closest('.chamaResponsivo') === null && !e.target.closest('.menuResponsivo')) 
+            document.getElementById('menuMobile')?.classList.remove('active'); 
+    });
+</script>
 </body>
 </html>
